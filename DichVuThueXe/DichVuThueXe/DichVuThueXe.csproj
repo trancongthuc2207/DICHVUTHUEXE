@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5F25E70-4812-4D1B-B524-3E45DA85E032}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DichVuThueXe</RootNamespace>
+    <AssemblyName>DichVuThueXe</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\BUS_KHACHHANG_TAIKHOAN.cs" />
+    <Compile Include="BUS\BUS_LOAIDV.cs" />
+    <Compile Include="BUS\BUS_NHANVIEN.cs" />
+    <Compile Include="BUS\BUS_NHANVIEN_TAIKHOAN.cs" />
+    <Compile Include="DAO\DAO_KHACHHANG_TAIKHOAN.cs" />
+    <Compile Include="DAO\DAO_LOAIDV.cs" />
+    <Compile Include="DAO\DAO_NHANVIEN.cs" />
+    <Compile Include="DAO\DAO_NHANVIEN_TAIKHOAN.cs" />
+    <Compile Include="GUI\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MENU_ChucNangMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MENU_ChucNangMain.Designer.cs">
+      <DependentUpon>MENU_ChucNangMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MENU_ChucNang_DatXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MENU_ChucNang_DatXe.Designer.cs">
+      <DependentUpon>MENU_ChucNang_DatXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MENU_ChucNang_Quantrivien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MENU_ChucNang_Quantrivien.Designer.cs">
+      <DependentUpon>MENU_ChucNang_Quantrivien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MENU_USER_KHACHHANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MENU_USER_KHACHHANG.Designer.cs">
+      <DependentUpon>MENU_USER_KHACHHANG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTTX.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HTTX.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="HTTX_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HTTX_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MENU_ChucNangMain.resx">
+      <DependentUpon>MENU_ChucNangMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MENU_ChucNang_DatXe.resx">
+      <DependentUpon>MENU_ChucNang_DatXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="HTTX.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>HTTX.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HTTX.dbml.layout">
+      <DependentUpon>HTTX.dbml</DependentUpon>
+    </None>
+    <None Include="HTTX_DataSet.xsc">
+      <DependentUpon>HTTX_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HTTX_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HTTX_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="HTTX_DataSet.xss">
+      <DependentUpon>HTTX_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
