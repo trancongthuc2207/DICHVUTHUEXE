@@ -19,5 +19,15 @@ namespace DichVuThueXe.DAO
             NHANVIEN nv = conn.NHANVIENs.FirstOrDefault(s => s.MaNV == acc.MaNV);
             return nv;
         }
+
+        public int getMaNVCurrent() 
+        {
+            int maCur = 0;
+            NHANVIEN nv = (NHANVIEN) from s in conn.NHANVIENs
+                          orderby s.MaNV descending
+                          select s;
+            maCur = nv.MaNV;
+            return maCur;
+        }
     }
 }

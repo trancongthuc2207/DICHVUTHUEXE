@@ -47,18 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_KHACHHANG.cs" />
     <Compile Include="BUS\BUS_KHACHHANG_TAIKHOAN.cs" />
     <Compile Include="BUS\BUS_LOAIDV.cs" />
     <Compile Include="BUS\BUS_NHANVIEN.cs" />
     <Compile Include="BUS\BUS_NHANVIEN_TAIKHOAN.cs" />
+    <Compile Include="DAO\DAO_KHACHHANG.cs" />
     <Compile Include="DAO\DAO_KHACHHANG_TAIKHOAN.cs" />
     <Compile Include="DAO\DAO_LOAIDV.cs" />
     <Compile Include="DAO\DAO_NHANVIEN.cs" />
     <Compile Include="DAO\DAO_NHANVIEN_TAIKHOAN.cs" />
-    <Compile Include="GUI\LOGIN.cs">
+    <Compile Include="GUI\LOGIN\GIAODIEN_DANGKY.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\LOGIN.Designer.cs">
+    <Compile Include="GUI\LOGIN\GIAODIEN_DANGKY.Designer.cs">
+      <DependentUpon>GIAODIEN_DANGKY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LOGIN\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LOGIN\LOGIN.Designer.cs">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MENU_ChucNangMain.cs">
@@ -85,6 +93,12 @@
     <Compile Include="GUI\MENU_USER_KHACHHANG.Designer.cs">
       <DependentUpon>MENU_USER_KHACHHANG.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\LOGIN\SELECT_DANGKY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LOGIN\SELECT_DANGKY.Designer.cs">
+      <DependentUpon>SELECT_DANGKY.cs</DependentUpon>
+    </Compile>
     <Compile Include="HTTX.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,7 +111,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\LOGIN.resx">
+    <EmbeddedResource Include="GUI\LOGIN\GIAODIEN_DANGKY.resx">
+      <DependentUpon>GIAODIEN_DANGKY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LOGIN\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MENU_ChucNangMain.resx">
@@ -105,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MENU_ChucNang_DatXe.resx">
       <DependentUpon>MENU_ChucNang_DatXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LOGIN\SELECT_DANGKY.resx">
+      <DependentUpon>SELECT_DANGKY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

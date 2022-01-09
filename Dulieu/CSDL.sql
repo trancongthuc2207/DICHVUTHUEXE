@@ -27,7 +27,7 @@ create table KHACHHANG
 	, Ten nvarchar(50) NOT NULL
 	, CMND varchar(12) NOT NULL
 	, Gioitinh nvarchar(5) NOT NULL
-	, Ngaysinh date check (Ngaysinh < getdate()) NOT NULL
+	, Ngaysinh datetime check (Ngaysinh < getdate()) NOT NULL
 	, Diachi nvarchar(50) NOT NULL
 	, SDT varchar(10) 
 	, Constraint CHECK_GIOITINHKH check (Gioitinh = N'Nữ' or Gioitinh = N'Nam')
@@ -40,7 +40,7 @@ create table NHANVIEN
 	, TenNV nvarchar(50) NOT NULL
 	, CMND nvarchar(12) NOT NULL
 	, Gioitinh nvarchar(10) NOT NULL
-	, Ngaysinh date 
+	, Ngaysinh datetime 
 	, Diachi nvarchar(50) NOT NULL
 	, SDT varchar(10) 
 	, Constraint CHECK_GIOITINHNV check (Gioitinh = N'Nữ' or Gioitinh = N'Nam')
@@ -94,7 +94,7 @@ create table HOADON
 	,MaHDG int foreign key references HOPDONG
 	, SogioSD decimal 
 	, Thanhtien money
-	, Ngayin date
+	, Ngayin datetime
 	, Trangthai bit    ---- BIT 1 : đại diện cho hoá đơn đã đc thanh toán; 0 :đại diện cho hoá đơn chưa được thanh toán
 )
 

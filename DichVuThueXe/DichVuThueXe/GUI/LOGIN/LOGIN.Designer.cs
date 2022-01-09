@@ -37,6 +37,7 @@ namespace DichVuThueXe
             this.label3 = new System.Windows.Forms.Label();
             this.cbbKindAccount = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnDK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -73,9 +74,9 @@ namespace DichVuThueXe
             // 
             // btnDN
             // 
-            this.btnDN.Location = new System.Drawing.Point(217, 197);
+            this.btnDN.Location = new System.Drawing.Point(146, 193);
             this.btnDN.Name = "btnDN";
-            this.btnDN.Size = new System.Drawing.Size(101, 23);
+            this.btnDN.Size = new System.Drawing.Size(91, 23);
             this.btnDN.TabIndex = 4;
             this.btnDN.Text = "ĐĂNG NHẬP";
             this.btnDN.UseVisualStyleBackColor = true;
@@ -112,11 +113,22 @@ namespace DichVuThueXe
             this.label4.TabIndex = 7;
             this.label4.Text = "Đăng nhập với quyền:";
             // 
+            // btnDK
+            // 
+            this.btnDK.Location = new System.Drawing.Point(255, 193);
+            this.btnDK.Name = "btnDK";
+            this.btnDK.Size = new System.Drawing.Size(91, 24);
+            this.btnDK.TabIndex = 8;
+            this.btnDK.Text = "ĐĂNG KÝ";
+            this.btnDK.UseVisualStyleBackColor = true;
+            this.btnDK.Click += new System.EventHandler(this.btnDK_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 267);
+            this.Controls.Add(this.btnDK);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbbKindAccount);
             this.Controls.Add(this.label3);
@@ -142,6 +154,7 @@ namespace DichVuThueXe
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbbKindAccount;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDK;
     }
 }
 

@@ -27,7 +27,7 @@ namespace DichVuThueXe
 
         private void btnDN_Click(object sender, EventArgs e)
         {
-            if (cbbKindAccount.SelectedItem.ToString() == "Hệ Thống") 
+            if (cbbKindAccount.SelectedIndex == 1)  //"Hệ Thống" 
             {
                 int? check = bUS_NHANVIEN_TAIKHOAN.getCheckDangNhap(txtTK.Text, txtMK.Text);
                 if (check == 1)
@@ -47,19 +47,10 @@ namespace DichVuThueXe
                     fMenu.ShowDialog();
                 }
                 else
-                            if (check == 3)
-                {
-                    MessageBox.Show("Chào mừng bạn đăng nhập vào hệ thống cho thuê xe với tư cách là Khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    nvCur = bUS_NHANVIEN_TAIKHOAN.getNV_TKLogin(txtTK.Text, txtMK.Text);
-                    nvCur = bUS_NHANVIEN_TAIKHOAN.getNV_TKLogin(txtTK.Text, txtMK.Text);
-                    MENU_ChucNangMain fMenu = new MENU_ChucNangMain();
-                    fMenu.ShowDialog();
-                }
-                else
                     MessageBox.Show("SAI TÀI KHOẢN HOẶC MẬT KHẨU!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-                if (cbbKindAccount.SelectedItem.ToString() == "Khách Hàng")
+                if (cbbKindAccount.SelectedIndex == 0) //"Khách Hàng"
                 {
                     int? check = bUS_KHACHHANG_TAIKHOAN.getCheckDangNhap(txtTK.Text, txtMK.Text);
                     if (check == 3)
@@ -72,9 +63,12 @@ namespace DichVuThueXe
                     else
                     {
                     MessageBox.Show("Có thể bạn chưa tài khoản hoặc sai thông tin đăng nhập, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }    
-            }
-
+                    }
+                 
+                }
+                else
+                    if (cbbKindAccount.SelectedIndex != 0 && cbbKindAccount.SelectedIndex != 1)
+                        MessageBox.Show("Mời bạn chọn quyền đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 
@@ -88,6 +82,12 @@ namespace DichVuThueXe
         {
             KHACHHANG_TAIKHOAN tkCur = new KHACHHANG_TAIKHOAN();
             return tkCur = khCur;
+        }
+
+        private void btnDK_Click(object sender, EventArgs e)
+        {
+            SELECT_DANGKY sl = new SELECT_DANGKY();
+            sl.ShowDialog();
         }
     }
 }

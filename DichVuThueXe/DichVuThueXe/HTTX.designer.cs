@@ -170,6 +170,38 @@ namespace DichVuThueXe
 			checkDN = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_addKhachHang")]
+		public int SV_addKhachHang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> makh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(40)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(12)")] string cmnd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(5)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> check)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), makh, ten, cmnd, gioitinh, ngaysinh, diachi, sdt, check);
+			check = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_addKhachHang_TaiKhoan")]
+		public int SV_addKhachHang_TaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> makh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string taikhoan, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> check)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), makh, taikhoan, matkhau, check);
+			check = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getMaKHCurrent")]
+		public int getMaKHCurrent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> maCur)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCur);
+			maCur = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_checkAccount_KH")]
+		public int SV_checkAccount_KH([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maAcc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string taikhoan, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> maCur)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maAcc, taikhoan, maCur);
+			maCur = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADON")]
@@ -300,7 +332,7 @@ namespace DichVuThueXe
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngayin", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngayin", DbType="DateTime")]
 		public System.Nullable<System.DateTime> Ngayin
 		{
 			get
@@ -802,7 +834,7 @@ namespace DichVuThueXe
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBD", DbType="Date NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBD", DbType="DateTime NOT NULL")]
 		public System.DateTime NgayBD
 		{
 			get
@@ -822,7 +854,7 @@ namespace DichVuThueXe
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKT", DbType="Date NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayKT", DbType="DateTime NOT NULL")]
 		public System.DateTime NgayKT
 		{
 			get
@@ -1172,7 +1204,7 @@ namespace DichVuThueXe
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaysinh", DbType="Date NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaysinh", DbType="DateTime NOT NULL")]
 		public System.DateTime Ngaysinh
 		{
 			get
@@ -1653,7 +1685,7 @@ namespace DichVuThueXe
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaysinh", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaysinh", DbType="DateTime")]
 		public System.Nullable<System.DateTime> Ngaysinh
 		{
 			get
@@ -1693,7 +1725,7 @@ namespace DichVuThueXe
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string SDT
 		{
 			get

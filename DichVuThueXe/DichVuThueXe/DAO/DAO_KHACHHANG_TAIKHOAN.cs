@@ -39,5 +39,19 @@ namespace DichVuThueXe.DAO
             KHACHHANG_TAIKHOAN tkDN = conn.KHACHHANG_TAIKHOANs.FirstOrDefault(s => s.Taikhoan == tk && s.Matkhau == mk);
             return tkDN;
         }
+
+        public int? addKhachHang_TaiKhoan(int? makh, string taikhoan, string matkhau)
+        {
+            int? checkadd = 0;
+            conn.SV_addKhachHang_TaiKhoan(makh, taikhoan, matkhau, ref checkadd);
+            return checkadd;
+        }
+
+        public int? SV_checkAccount_KH(int? makh, string taikhoan)
+        {
+            int? check = 0;
+            conn.SV_checkAccount_KH(makh, taikhoan, ref check);
+            return check;
+        }
     }
 }
