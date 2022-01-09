@@ -1,18 +1,24 @@
 - QUẢN TRỊ
-	+ Quản lý xe		Thêm, sửa, xoá			Quản lý hợp đồng có
-	+ Quản lý nhân viên	Sửa, xoá			+ Tạo hợp đồng
-	+ Quản lý khách hàng	Sửa, xoá			+ Sửa		
-	+ Quản lý hợp đồng					+ Xoá	- Thanh toán rồi ko cho đổi
+	+ Quản lý xe		Thêm, sửa, xoá			
+	+ Quản lý nhân viên	Sửa, xoá		
+	+ Quản lý khách hàng	Sửa, xoá				
+	+ Quản lý hợp đồng					
 	+ Quản lý hoá đơn thanh toán	
 	+ Thanh toán	- Mỗi hoá đơn chứa 1 mã hợp đồng, Khi thanh toán tức là chuyển đổi trạng hoá đơn thành 1.
 			- Update lại trạng thái hợp cũng bằng = 1.
 	
+			----	Quản lý hợp đồng có
+				+ Tạo hợp đồng
+				+ Sửa
+				+ Xoá	- Thanh toán rồi ko cho đổi
+								
 
 - NHÂN VIÊN:
 	+ Quản lý khách hàng
 	+ Quản lý hợp đồng
 	+ Quản lý hoá đơn thanh toán
-	
+									
+
 
 -NGƯỜI DÙNG:
 	+ Tạo hợp đồng
@@ -24,3 +30,10 @@
 						+ Theo nhân viên	+ Check account NV
 			Hệ thống Đăng ký:	+ Theo khách hàng	+ Ràng buộc - cùng mã
 						+ Theo nhân viên	+ Ràng buộc - cùng mã
+
+
+Thức : CSDL + ĐĂNG NHẬP + ĐĂNG KÝ
+Phúc : Người dùng		
+Trường : Quản lý hợp đồng
+Hưng : Quản lý xe
+Minh : Quản lý nhân viên
