@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DichVuThueXe.BUS;
 using DichVuThueXe.GUI;
+using DichVuThueXe.PRINT;
 
 namespace DichVuThueXe.GUI
 {
@@ -36,7 +37,9 @@ namespace DichVuThueXe.GUI
 
         private void MENU_ChucNangMain_Load(object sender, EventArgs e)
         {
-      
+            // TODO: This line of code loads data into the 'hTTX_DataSet.HOADON' table. You can move, or remove it, as needed.
+            this.hOADONTableAdapter.Fill(this.hTTX_DataSet.HOADON);
+
         }
 
         private void btnDatXe_Click(object sender, EventArgs e)
@@ -61,6 +64,11 @@ namespace DichVuThueXe.GUI
             }
             else
                 MessageBox.Show("Bạn không đủ quyền để vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            Print pr = new Print();
         }
     }
 }

@@ -38,6 +38,7 @@ namespace DichVuThueXe
             this.cbbKindAccount = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDK = new System.Windows.Forms.Button();
+            this.check_XemMK = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -71,6 +72,7 @@ namespace DichVuThueXe
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(152, 20);
             this.txtMK.TabIndex = 3;
+            this.txtMK.UseSystemPasswordChar = true;
             // 
             // btnDN
             // 
@@ -95,6 +97,7 @@ namespace DichVuThueXe
             // 
             // cbbKindAccount
             // 
+            this.cbbKindAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbKindAccount.FormattingEnabled = true;
             this.cbbKindAccount.Items.AddRange(new object[] {
             "Khách Hàng",
@@ -123,11 +126,23 @@ namespace DichVuThueXe
             this.btnDK.UseVisualStyleBackColor = true;
             this.btnDK.Click += new System.EventHandler(this.btnDK_Click);
             // 
+            // check_XemMK
+            // 
+            this.check_XemMK.AutoSize = true;
+            this.check_XemMK.Location = new System.Drawing.Point(364, 151);
+            this.check_XemMK.Name = "check_XemMK";
+            this.check_XemMK.Size = new System.Drawing.Size(66, 17);
+            this.check_XemMK.TabIndex = 23;
+            this.check_XemMK.Text = "Xem MK";
+            this.check_XemMK.UseVisualStyleBackColor = true;
+            this.check_XemMK.CheckedChanged += new System.EventHandler(this.check_XemMK_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 267);
+            this.Controls.Add(this.check_XemMK);
             this.Controls.Add(this.btnDK);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbbKindAccount);
@@ -155,6 +170,7 @@ namespace DichVuThueXe
         private System.Windows.Forms.ComboBox cbbKindAccount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDK;
+        private System.Windows.Forms.CheckBox check_XemMK;
     }
 }
 

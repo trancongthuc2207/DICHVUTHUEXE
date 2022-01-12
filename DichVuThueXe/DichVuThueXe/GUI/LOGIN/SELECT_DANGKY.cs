@@ -27,16 +27,19 @@ namespace DichVuThueXe.GUI
         private void btnDK_NV_Click(object sender, EventArgs e)
         {
             vitri = 1;
-            maNVCur = bUS_NHANVIEN.getMaNVCurrent();
+            this.Hide();
             GIAODIEN_DANGKY gd = new GIAODIEN_DANGKY();
             gd.ShowDialog();
+            this.Close();
         }
 
         private void btnDK_KH_Click(object sender, EventArgs e)
         {
             vitri = 3;
+            this.Hide();
             GIAODIEN_DANGKY gd = new GIAODIEN_DANGKY();
             gd.ShowDialog();
+            this.Close();
         }
 
         public static int getVitri_DK()
@@ -47,6 +50,11 @@ namespace DichVuThueXe.GUI
         public static int getMANV_DK()
         {
             return maNVCur;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

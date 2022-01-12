@@ -32,19 +32,23 @@ namespace DichVuThueXe
                 int? check = bUS_NHANVIEN_TAIKHOAN.getCheckDangNhap(txtTK.Text, txtMK.Text);
                 if (check == 1)
                 {
+                    this.Hide();
                     MessageBox.Show("Chào mừng bạn đăng nhập vào hệ thống cho thuê xe với tư cách là User", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     nvCur = bUS_NHANVIEN_TAIKHOAN.getNV_TKLogin(txtTK.Text, txtMK.Text);
                     MENU_ChucNangMain fMenu = new MENU_ChucNangMain();
                     fMenu.ShowDialog();
+                    this.Close();
                 }
                 else
                     if (check == 2)
                 {
+                    this.Hide();
                     MessageBox.Show("Chào mừng bạn đăng nhập vào hệ thống cho thuê xe với tư cách là Quản trị viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     nvCur = bUS_NHANVIEN_TAIKHOAN.getNV_TKLogin(txtTK.Text, txtMK.Text);
                     nvCur = bUS_NHANVIEN_TAIKHOAN.getNV_TKLogin(txtTK.Text, txtMK.Text);
                     MENU_ChucNangMain fMenu = new MENU_ChucNangMain();
                     fMenu.ShowDialog();
+                    this.Close();
                 }
                 else
                     MessageBox.Show("SAI TÀI KHOẢN HOẶC MẬT KHẨU!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,10 +59,12 @@ namespace DichVuThueXe
                     int? check = bUS_KHACHHANG_TAIKHOAN.getCheckDangNhap(txtTK.Text, txtMK.Text);
                     if (check == 3)
                     {
+                        this.Hide();
                         MessageBox.Show("Chào mừng bạn đăng nhập vào hệ thống cho thuê xe với tư cách là Khách Hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         khCur = bUS_KHACHHANG_TAIKHOAN.getKH_TKLogin(txtTK.Text, txtMK.Text);
                         MENU_USER_KHACHHANG fMenuKH = new MENU_USER_KHACHHANG();
                         fMenuKH.ShowDialog();
+                        this.Close();
                     }
                     else
                     {
@@ -88,6 +94,19 @@ namespace DichVuThueXe
         {
             SELECT_DANGKY sl = new SELECT_DANGKY();
             sl.ShowDialog();
+        }
+
+        private void check_XemMK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_XemMK.Checked)
+            {
+                txtMK.UseSystemPasswordChar = false;
+            }
+            else
+                if (!check_XemMK.Checked)
+            {
+                txtMK.UseSystemPasswordChar = true;
+            }
         }
     }
 }

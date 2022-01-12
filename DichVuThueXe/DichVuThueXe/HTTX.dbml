@@ -143,4 +143,32 @@
     <Parameter Name="maCur" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SV_checkAccount_NV" Method="SV_checkAccount_NV">
+    <Parameter Name="maAcc" Type="System.Int32" DbType="Int" />
+    <Parameter Name="taikhoan" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="maCur" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SV_addNhanVien_TaiKhoan" Method="SV_addNhanVien_TaiKhoan">
+    <Parameter Name="manv" Type="System.Int32" DbType="Int" />
+    <Parameter Name="taikhoan" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="matkhau" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="check" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.getMaNVCurrent" Method="getMaNVCurrent">
+    <Parameter Name="maCur" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SV_addNhanVien" Method="SV_addNhanVien">
+    <Parameter Name="manv" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(40)" />
+    <Parameter Name="cmnd" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="gioitinh" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="diachi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="check" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

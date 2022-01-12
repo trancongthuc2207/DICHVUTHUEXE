@@ -48,35 +48,22 @@ namespace DichVuThueXe.GUI
             this.btnQuantri = new System.Windows.Forms.Button();
             this.btnXuLyHDG = new System.Windows.Forms.Button();
             this.btnQuanLyKH = new System.Windows.Forms.Button();
-       
-            this.dataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hTTX_DataSet = new DichVuThueXe.HTTX_DataSet();
             this.hOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-         
+            this.hOADONTableAdapter = new DichVuThueXe.HTTX_DataSetTableAdapters.HOADONTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hOPDONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-          
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl_Main.SuspendLayout();
             this.tabP_ThanhToan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridV_HOADON)).BeginInit();
             this.tabP_XemHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-    
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hTTX_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOPDONGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -181,6 +168,7 @@ namespace DichVuThueXe.GUI
             this.btnThanhToan.TabIndex = 1;
             this.btnThanhToan.Text = "Thanh Toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // gridV_HOADON
             // 
@@ -222,18 +210,7 @@ namespace DichVuThueXe.GUI
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewCheckBoxColumn3});
-            this.dataGridView2.DataSource = this.hOPDONGBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(0, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(642, 290);
@@ -281,22 +258,19 @@ namespace DichVuThueXe.GUI
             this.btnQuanLyKH.Text = "Quản lý khách hàng";
             this.btnQuanLyKH.UseVisualStyleBackColor = true;
             // 
-            // dataSet
+            // hTTX_DataSet
             // 
-   
-            // dataSetBindingSource
-            // 
-       
-            this.dataSetBindingSource.Position = 0;
+            this.hTTX_DataSet.DataSetName = "HTTX_DataSet";
+            this.hTTX_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hOADONBindingSource
             // 
             this.hOADONBindingSource.DataMember = "HOADON";
-            this.hOADONBindingSource.DataSource = this.dataSetBindingSource;
+            this.hOADONBindingSource.DataSource = this.hTTX_DataSet;
             // 
             // hOADONTableAdapter
             // 
-         
+            this.hOADONTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -334,63 +308,6 @@ namespace DichVuThueXe.GUI
             this.dataGridViewCheckBoxColumn1.HeaderText = "Trangthai";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // hOPDONGBindingSource
-            // 
-            this.hOPDONGBindingSource.DataMember = "HOPDONG";
-            this.hOPDONGBindingSource.DataSource = this.dataSetBindingSource;
-            // 
-            // hOPDONGTableAdapter
-            // 
-       
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "MaHDG";
-            this.dataGridViewTextBoxColumn11.HeaderText = "MaHDG";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Maxe";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Maxe";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "MaKH";
-            this.dataGridViewTextBoxColumn13.HeaderText = "MaKH";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "MaL";
-            this.dataGridViewTextBoxColumn14.HeaderText = "MaL";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "MaNV";
-            this.dataGridViewTextBoxColumn15.HeaderText = "MaNV";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "NgayBD";
-            this.dataGridViewTextBoxColumn16.HeaderText = "NgayBD";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "NgayKT";
-            this.dataGridViewTextBoxColumn17.HeaderText = "NgayKT";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Trangthai";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Trangthai";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            // 
             // MENU_ChucNangMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,7 +333,8 @@ namespace DichVuThueXe.GUI
             ((System.ComponentModel.ISupportInitialize)(this.gridV_HOADON)).EndInit();
             this.tabP_XemHD.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-
+            ((System.ComponentModel.ISupportInitialize)(this.hTTX_DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,25 +384,14 @@ namespace DichVuThueXe.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayKTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.BindingSource dataSetBindingSource;
-  
+        private HTTX_DataSet hTTX_DataSet;
         private System.Windows.Forms.BindingSource hOADONBindingSource;
-    
+        private HTTX_DataSetTableAdapters.HOADONTableAdapter hOADONTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.BindingSource hOPDONGBindingSource;
-    
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
     }
 }

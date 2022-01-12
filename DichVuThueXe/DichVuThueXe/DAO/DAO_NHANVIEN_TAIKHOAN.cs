@@ -40,5 +40,19 @@ namespace DichVuThueXe.DAO
             return tkDN;
         }
 
+        public int? SV_checkAccount_NV(int? makh, string taikhoan)
+        {
+            int? check = 0;
+            conn.SV_checkAccount_NV(makh, taikhoan, ref check);
+            return check;
+        }
+
+        public int? addNhanVien_TaiKhoan(int? manv, string taikhoan, string matkhau)
+        {
+            int? checkadd = 0;
+            conn.SV_addNhanVien_TaiKhoan(manv, taikhoan, matkhau, ref checkadd);
+            return checkadd;
+        }
+
     }
 }

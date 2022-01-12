@@ -21,10 +21,15 @@ namespace DichVuThueXe.BUS
             NHANVIEN nv = dAO_NHANVIEN.getNhanVienFromTK(acc);
             return nv;
         }
-        public int getMaNVCurrent()
+        public int? getMaNVCurrent()
         {
-            int maCur = dAO_NHANVIEN.getMaNVCurrent();
+            int? maCur = dAO_NHANVIEN.getMaNVCurrent();
             return maCur;
+        }
+        public int? addNhanVien(int? maNV, string ten, string cmnd, string gioitinh, DateTime ngaysinh, string diachi, string sdt)
+        {
+            int? checkadd = dAO_NHANVIEN.addNhanVien(maNV, ten, cmnd, gioitinh, ngaysinh, diachi, sdt);
+            return checkadd;
         }
     }
 }

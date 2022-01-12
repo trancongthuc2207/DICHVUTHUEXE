@@ -70,14 +70,14 @@
         <classShapeMoniker Id="b8a6dbee-981e-4560-b5bb-a25a2324685e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.59375); (6.24478916666667 : 5.59375 : JumpStart); (6.41145583333333 : 5.59375 : JumpEnd); (6.46875 : 5.59375); (6.46875 : 3.34780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 5.59375); (6.46875 : 5.59375); (6.46875 : 3.34780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HTTXDataContext/KHACHHANG/KHACHHANG_HOPDONG" />
       <nodes>
         <classShapeMoniker Id="6293d72b-5a82-451b-889f-6040b0fe0ebb" />
         <classShapeMoniker Id="b8a6dbee-981e-4560-b5bb-a25a2324685e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.953125); (6.24478916666667 : 5.953125 : JumpStart); (6.41145583333333 : 5.953125 : JumpEnd); (9.5 : 5.953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 5.953125); (9.5 : 5.953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HTTXDataContext/KHACHHANG/KHACHHANG_KHACHHANG_TAIKHOAN" />
       <nodes>
         <classShapeMoniker Id="6293d72b-5a82-451b-889f-6040b0fe0ebb" />

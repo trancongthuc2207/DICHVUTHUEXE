@@ -20,14 +20,18 @@ namespace DichVuThueXe.DAO
             return nv;
         }
 
-        public int getMaNVCurrent() 
+        public int? getMaNVCurrent() 
         {
-            int maCur = 0;
-            NHANVIEN nv = (NHANVIEN) from s in conn.NHANVIENs
-                          orderby s.MaNV descending
-                          select s;
-            maCur = nv.MaNV;
+            int? maCur = 0;
+            conn.getMaNVCurrent(ref maCur);
             return maCur;
+        }
+
+        public int? addNhanVien(int? maNV, string ten, string cmnd, string gioitinh, DateTime ngaysinh, string diachi, string sdt)
+        {
+            int? checkadd = 0;
+            conn.SV_addNhanVien(maNV, ten, cmnd, gioitinh, ngaysinh, diachi, sdt, ref checkadd);
+            return checkadd;
         }
     }
 }

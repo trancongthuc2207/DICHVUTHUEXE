@@ -29,7 +29,16 @@ namespace DichVuThueXe.BUS
             return tkDN;
         }
 
-        
+        public int? SV_checkAccount_NV(int? makh, string taikhoan)
+        {
+            int? check = dAO_NHANVIEN_TAIKHOAN.SV_checkAccount_NV(makh, taikhoan);
+            return check;
+        }
 
+        public int? addNhanVien_TaiKhoan(int? manv, string taikhoan, string matkhau)
+        {
+            int? checkadd = dAO_NHANVIEN_TAIKHOAN.addNhanVien_TaiKhoan(manv, taikhoan, matkhau);
+            return checkadd;
+        }
     }
 }
