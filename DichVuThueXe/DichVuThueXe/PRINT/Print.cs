@@ -37,24 +37,24 @@
 //            string nhanvien_hopdong = "1";
 //            string nhanvein_tructiepthu = "2";
 //            DateTime ngayin = DateTime.Now;
-            
+
 //            Spire.Doc.Fields.TextRange title = paragraph.AppendText("\n\n~~~~~~~~DỊCH VỤ THUÊ XE~~~~~~~~~\n");
 //            Spire.Doc.Fields.TextRange text = paragraph.AppendText("~~~~~~~~~~~~~PHIẾU THU~~~~~~~~~~~~~\n\n");
 
 //            Paragraph paragraph_body = doc.Sections[0].AddParagraph();
-//            Spire.Doc.Fields.TextRange body = paragraph_body.AppendText(" ---- MÃ HOÁ ĐƠN : "+ maHDon + "\n" +
-//                                                                   " - Tên khách hàng: " + tenKH + "                            Số hợp đồng: " + soHopDong +"\n"+
-//                                                                   " - Giới tính: "+ gt + "                                     Số CMND: " + cmnd + "\n" +
+//            Spire.Doc.Fields.TextRange body = paragraph_body.AppendText(" ---- MÃ HOÁ ĐƠN : " + maHDon + "\n" +
+//                                                                   " - Tên khách hàng: " + tenKH + "                            Số hợp đồng: " + soHopDong + "\n" +
+//                                                                   " - Giới tính: " + gt + "                                     Số CMND: " + cmnd + "\n" +
 //                                                                   " - SDT: " + sdt + "\n" +
 //                                                                   " - Nhân viên trách nhiệm hợp đồng: " + nhanvien_hopdong + "\n" +
-//                                                                   " - Nhân viên trực tiếp thu: "+ nhanvein_tructiepthu + "\n" +
+//                                                                   " - Nhân viên trực tiếp thu: " + nhanvein_tructiepthu + "\n" +
 //                                                                   " - Ngày in: " + ngayin.ToString() + "\n\n");
-       
+
 //            //text.CharacterFormat.Italic = true;  // in nghiêng
 //            //text.CharacterFormat.UnderlineStyle = UnderlineStyle.Single; // gạch chân
 //            text.CharacterFormat.Bold = true;                                   // kiểu in đậm
 //            title.CharacterFormat.Bold = true;
-            
+
 //            paragraph.Format.TextAlignment = TextAlignment.Center;              // văn bản canh giữa 
 //            paragraph.Format.HorizontalAlignment = HorizontalAlignment.Center;  // đoạn canh giữa
 //                                                                                //paragraph.Format.HorizontalAlignment = HorizontalAlignment.Left;  // đoạn canh trái  
@@ -163,6 +163,6 @@
 //            doc.Close();
 
 //        }
-        
+
 //    }
 //}
