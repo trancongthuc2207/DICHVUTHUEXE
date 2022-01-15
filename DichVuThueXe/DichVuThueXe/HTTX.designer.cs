@@ -234,6 +234,13 @@ namespace DichVuThueXe
 			check = ((System.Nullable<int>)(result.GetParameterValue(7)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reportHDByNgayBDandNgayKT")]
+		public ISingleResult<reportHDByNgayBDandNgayKTResult> reportHDByNgayBDandNgayKT([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngaybd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngaykt)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ngaybd, ngaykt);
+			return ((ISingleResult<reportHDByNgayBDandNgayKTResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADON")]
@@ -2010,6 +2017,122 @@ namespace DichVuThueXe
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class reportHDByNgayBDandNgayKTResult
+	{
+		
+		private int _MaHD;
+		
+		private System.Nullable<int> _MaHDG;
+		
+		private System.Nullable<decimal> _SogioSD;
+		
+		private System.Nullable<decimal> _Thanhtien;
+		
+		private System.Nullable<System.DateTime> _Ngayin;
+		
+		private System.Nullable<bool> _Trangthai;
+		
+		public reportHDByNgayBDandNgayKTResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHD", DbType="Int NOT NULL")]
+		public int MaHD
+		{
+			get
+			{
+				return this._MaHD;
+			}
+			set
+			{
+				if ((this._MaHD != value))
+				{
+					this._MaHD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHDG", DbType="Int")]
+		public System.Nullable<int> MaHDG
+		{
+			get
+			{
+				return this._MaHDG;
+			}
+			set
+			{
+				if ((this._MaHDG != value))
+				{
+					this._MaHDG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SogioSD", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> SogioSD
+		{
+			get
+			{
+				return this._SogioSD;
+			}
+			set
+			{
+				if ((this._SogioSD != value))
+				{
+					this._SogioSD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thanhtien", DbType="Money")]
+		public System.Nullable<decimal> Thanhtien
+		{
+			get
+			{
+				return this._Thanhtien;
+			}
+			set
+			{
+				if ((this._Thanhtien != value))
+				{
+					this._Thanhtien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngayin", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Ngayin
+		{
+			get
+			{
+				return this._Ngayin;
+			}
+			set
+			{
+				if ((this._Ngayin != value))
+				{
+					this._Ngayin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trangthai", DbType="Bit")]
+		public System.Nullable<bool> Trangthai
+		{
+			get
+			{
+				return this._Trangthai;
+			}
+			set
+			{
+				if ((this._Trangthai != value))
+				{
+					this._Trangthai = value;
+				}
 			}
 		}
 	}

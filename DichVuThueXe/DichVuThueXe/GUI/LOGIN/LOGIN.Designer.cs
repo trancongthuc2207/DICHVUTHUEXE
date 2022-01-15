@@ -64,14 +64,14 @@ namespace DichVuThueXe
             this.txtTK.Location = new System.Drawing.Point(194, 109);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(152, 20);
-            this.txtTK.TabIndex = 2;
+            this.txtTK.TabIndex = 1;
             // 
             // txtMK
             // 
             this.txtMK.Location = new System.Drawing.Point(194, 149);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(152, 20);
-            this.txtMK.TabIndex = 3;
+            this.txtMK.TabIndex = 2;
             this.txtMK.UseSystemPasswordChar = true;
             // 
             // btnDN
@@ -121,7 +121,7 @@ namespace DichVuThueXe
             this.btnDK.Location = new System.Drawing.Point(255, 193);
             this.btnDK.Name = "btnDK";
             this.btnDK.Size = new System.Drawing.Size(91, 24);
-            this.btnDK.TabIndex = 8;
+            this.btnDK.TabIndex = 5;
             this.btnDK.Text = "ĐĂNG KÝ";
             this.btnDK.UseVisualStyleBackColor = true;
             this.btnDK.Click += new System.EventHandler(this.btnDK_Click);
@@ -132,7 +132,7 @@ namespace DichVuThueXe
             this.check_XemMK.Location = new System.Drawing.Point(364, 151);
             this.check_XemMK.Name = "check_XemMK";
             this.check_XemMK.Size = new System.Drawing.Size(66, 17);
-            this.check_XemMK.TabIndex = 23;
+            this.check_XemMK.TabIndex = 3;
             this.check_XemMK.Text = "Xem MK";
             this.check_XemMK.UseVisualStyleBackColor = true;
             this.check_XemMK.CheckedChanged += new System.EventHandler(this.check_XemMK_CheckedChanged);

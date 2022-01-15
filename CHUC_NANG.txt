@@ -1,7 +1,7 @@
 - QUẢN TRỊ
 	+ Quản lý xe		Thêm, sửa, xoá			
-	+ Quản lý nhân viên	Sửa, xoá		
-	+ Quản lý khách hàng	Sửa, xoá				
+	+ Quản lý nhân viên	Sửa, xoá		Sửa account nv	
+	+ Quản lý khách hàng	Sửa, xoá		Sửa account kh 		
 	+ Quản lý hợp đồng					
 	+ Quản lý hoá đơn thanh toán	
 	+ Thanh toán	- Mỗi hoá đơn chứa 1 mã hợp đồng, Khi thanh toán tức là chuyển đổi trạng hoá đơn thành 1.
@@ -13,14 +13,14 @@
 				+ Xoá	- Thanh toán rồi ko cho đổi
 								
 
-- NHÂN VIÊN:
-	+ Quản lý khách hàng
-	+ Quản lý hợp đồng
-	+ Quản lý hoá đơn thanh toán
-									
+- NHÂN VIÊN:										
+	+ Quản lý khách hàng			Thêm,	
+	+ Quản lý hợp đồng			Thêm, Xem, sửa, xoá
+	+ Quản lý hoá đơn thanh toán		
+								
 
 
--NGƯỜI DÙNG:
+- NGƯỜI DÙNG:
 	+ Tạo hợp đồng
 	+ Đổi password
 	+ Sửa thông tin cá nhân
@@ -41,3 +41,17 @@ Minh : Quản lý nhân viên
 
 
  Spire.Office
+
+
+
+NÚT QUẢN TRỊ:
+Quản trị nhân viên
+Quản trị xe
+
+
+Quản trị khách hàng		: Thêm thông tin KH, ko có thêm account
+
+Quản lý hoá đơn thanh toán :   Tìm cái mã hợp đồng - click chọn Bấm nút thanh toán, cập nhật giờ in hoá đơn là in phiếu thu
+	
+
+

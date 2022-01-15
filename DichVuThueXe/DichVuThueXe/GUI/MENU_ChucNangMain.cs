@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DichVuThueXe.BUS;
 using DichVuThueXe.GUI;
-using DichVuThueXe.PRINT;
+//using DichVuThueXe.PRINT;
 
 namespace DichVuThueXe.GUI
 {
@@ -37,9 +37,13 @@ namespace DichVuThueXe.GUI
 
         private void MENU_ChucNangMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hTTX_DataSet.HOPDONG' table. You can move, or remove it, as needed.
+            this.hOPDONGTableAdapter.Fill(this.hTTX_DataSet.HOPDONG);
             // TODO: This line of code loads data into the 'hTTX_DataSet.HOADON' table. You can move, or remove it, as needed.
             this.hOADONTableAdapter.Fill(this.hTTX_DataSet.HOADON);
 
+
+            this.reportViewer1.RefreshReport();
         }
 
         private void btnDatXe_Click(object sender, EventArgs e)
@@ -68,7 +72,41 @@ namespace DichVuThueXe.GUI
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            Print pr = new Print();
+            //Print pr = new Print();
+        }
+
+        private void btn_xemBC_Click(object sender, EventArgs e)
+        {
+            DateTime ngayBD = dtP_NgayBD.Value;
+            DateTime ngayKT = dtP_NgayKT.Value;
+
+            this.reportHDByNgayBDandNgayKTTableAdapter.Fill(this.dICHVUTHUEXEDataSet.reportHDByNgayBDandNgayKT,ngayBD, ngayKT);
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void btnQuanLyKH_Click(object sender, EventArgs e)
+        {
+            tabControl_Main.SelectTab(2);
+        }
+
+        private void btnXuLyHDG_Click(object sender, EventArgs e)
+        {
+            tabControl_Main.SelectTab(1);
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            tabControl_Main.SelectTab(3);
+        }
+
+        private void btnTT_Click(object sender, EventArgs e)
+        {
+            tabControl_Main.SelectTab(0);
+        }
+
+        private void btnRefreshHD_Click(object sender, EventArgs e)
+        {
+            gridV_HOPDONG.Refresh();
         }
     }
 }

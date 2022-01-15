@@ -145,7 +145,7 @@ namespace DichVuThueXe.GUI
             this.cbbGioiTinh.Location = new System.Drawing.Point(163, 231);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(179, 21);
-            this.cbbGioiTinh.TabIndex = 6;
+            this.cbbGioiTinh.TabIndex = 3;
             // 
             // label5
             // 
@@ -188,14 +188,14 @@ namespace DichVuThueXe.GUI
             this.txtTen.Location = new System.Drawing.Point(163, 145);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(179, 20);
-            this.txtTen.TabIndex = 10;
+            this.txtTen.TabIndex = 1;
             // 
             // txtCMND
             // 
             this.txtCMND.Location = new System.Drawing.Point(163, 191);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(179, 20);
-            this.txtCMND.TabIndex = 10;
+            this.txtCMND.TabIndex = 2;
             this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // txtNgaySinh
@@ -203,7 +203,7 @@ namespace DichVuThueXe.GUI
             this.txtNgaySinh.Location = new System.Drawing.Point(163, 274);
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.Size = new System.Drawing.Size(179, 20);
-            this.txtNgaySinh.TabIndex = 10;
+            this.txtNgaySinh.TabIndex = 4;
             this.txtNgaySinh.Text = "   -   -   ";
             this.txtNgaySinh.TextChanged += new System.EventHandler(this.txtNgaySinh_TextChanged);
             // 
@@ -212,14 +212,14 @@ namespace DichVuThueXe.GUI
             this.txtDiaChi.Location = new System.Drawing.Point(163, 317);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(179, 20);
-            this.txtDiaChi.TabIndex = 10;
+            this.txtDiaChi.TabIndex = 5;
             // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(163, 360);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(179, 20);
-            this.txtSDT.TabIndex = 10;
+            this.txtSDT.TabIndex = 6;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
@@ -265,14 +265,14 @@ namespace DichVuThueXe.GUI
             this.txtTaikhoan.Location = new System.Drawing.Point(615, 145);
             this.txtTaikhoan.Name = "txtTaikhoan";
             this.txtTaikhoan.Size = new System.Drawing.Size(144, 20);
-            this.txtTaikhoan.TabIndex = 15;
+            this.txtTaikhoan.TabIndex = 7;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(615, 184);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(144, 20);
-            this.txtMatKhau.TabIndex = 15;
+            this.txtMatKhau.TabIndex = 8;
             this.txtMatKhau.UseSystemPasswordChar = true;
             this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
             // 
@@ -281,7 +281,7 @@ namespace DichVuThueXe.GUI
             this.txtXacNhanMK.Location = new System.Drawing.Point(615, 231);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(144, 20);
-            this.txtXacNhanMK.TabIndex = 15;
+            this.txtXacNhanMK.TabIndex = 9;
             this.txtXacNhanMK.UseSystemPasswordChar = true;
             // 
             // label12
@@ -302,7 +302,7 @@ namespace DichVuThueXe.GUI
             this.btnDK.Location = new System.Drawing.Point(536, 342);
             this.btnDK.Name = "btnDK";
             this.btnDK.Size = new System.Drawing.Size(139, 37);
-            this.btnDK.TabIndex = 16;
+            this.btnDK.TabIndex = 11;
             this.btnDK.Text = "ĐĂNG KÝ";
             this.btnDK.UseVisualStyleBackColor = true;
             this.btnDK.Click += new System.EventHandler(this.btnDK_Click);
@@ -350,7 +350,7 @@ namespace DichVuThueXe.GUI
             this.btnRefresh.Location = new System.Drawing.Point(682, 342);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(77, 37);
-            this.btnRefresh.TabIndex = 20;
+            this.btnRefresh.TabIndex = 12;
             this.btnRefresh.Text = "LÀM MỚI";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -397,7 +397,7 @@ namespace DichVuThueXe.GUI
             this.check_XemMK.Location = new System.Drawing.Point(693, 257);
             this.check_XemMK.Name = "check_XemMK";
             this.check_XemMK.Size = new System.Drawing.Size(66, 17);
-            this.check_XemMK.TabIndex = 22;
+            this.check_XemMK.TabIndex = 10;
             this.check_XemMK.Text = "Xem MK";
             this.check_XemMK.UseVisualStyleBackColor = true;
             this.check_XemMK.CheckedChanged += new System.EventHandler(this.check_XemMK_CheckedChanged);
