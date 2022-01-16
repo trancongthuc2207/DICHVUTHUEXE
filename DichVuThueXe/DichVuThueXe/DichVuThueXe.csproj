@@ -115,11 +115,13 @@
     <Compile Include="BUS\BUS_LOAIDV.cs" />
     <Compile Include="BUS\BUS_NHANVIEN.cs" />
     <Compile Include="BUS\BUS_NHANVIEN_TAIKHOAN.cs" />
+    <Compile Include="BUS\BUS_XE.cs" />
     <Compile Include="DAO\DAO_KHACHHANG.cs" />
     <Compile Include="DAO\DAO_KHACHHANG_TAIKHOAN.cs" />
     <Compile Include="DAO\DAO_LOAIDV.cs" />
     <Compile Include="DAO\DAO_NHANVIEN.cs" />
     <Compile Include="DAO\DAO_NHANVIEN_TAIKHOAN.cs" />
+    <Compile Include="DAO\DAO_XE.cs" />
     <Compile Include="DICHVUTHUEXEDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -167,9 +169,6 @@
     <Compile Include="GUI\LOGIN\SELECT_DANGKY.Designer.cs">
       <DependentUpon>SELECT_DANGKY.cs</DependentUpon>
     </Compile>
-    <Compile Include="HTTX.cs">
-      <DependentUpon>HTTX.dbml</DependentUpon>
-    </Compile>
     <Compile Include="HTTX.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LOGIN\SELECT_DANGKY.resx">
       <DependentUpon>SELECT_DANGKY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MENU_ChucNang_Quantrivien.resx">
+      <DependentUpon>MENU_ChucNang_Quantrivien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

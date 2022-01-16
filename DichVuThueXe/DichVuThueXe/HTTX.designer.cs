@@ -54,7 +54,7 @@ namespace DichVuThueXe
     #endregion
 		
 		public HTTXDataContext() : 
-				base(global::DichVuThueXe.Properties.Settings.Default.DICHVUTHUEXEConnectionString, mappingSource)
+				base(global::DichVuThueXe.Properties.Settings.Default.DICHVUTHUEXEConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -155,11 +155,11 @@ namespace DichVuThueXe
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_CheckDN")]
-		public int SV_CheckDN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Taikhoan", DbType="NVarChar(50)")] string taikhoan, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Matkhau", DbType="NVarChar(50)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> checkDN)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getMaKHCurrent")]
+		public int getMaKHCurrent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> maCur)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), taikhoan, matkhau, checkDN);
-			checkDN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCur);
+			maCur = ((System.Nullable<int>)(result.GetParameterValue(0)));
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -168,6 +168,49 @@ namespace DichVuThueXe
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), taikhoan, matkhau, checkDN);
 			checkDN = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getMaNVCurrent")]
+		public int getMaNVCurrent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> maCur)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCur);
+			maCur = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reportHDByNgayBDandNgayKT")]
+		public ISingleResult<reportHDByNgayBDandNgayKTResult> reportHDByNgayBDandNgayKT([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngaybd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngaykt)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ngaybd, ngaykt);
+			return ((ISingleResult<reportHDByNgayBDandNgayKTResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CheckXeTonTai")]
+		public int SP_CheckXeTonTai([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> exist)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, exist);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SuaXe")]
+		public int SP_SuaXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tenxe", DbType="NVarChar(50)")] string tenxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bienso", DbType="VarChar(25)")] string bienso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Trangthai", DbType="Bit")] System.Nullable<bool> trangthai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaL", DbType="Int")] System.Nullable<int> maL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, tenxe, bienso, trangthai, maL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ThemXe")]
+		public int SP_ThemXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tenxe", DbType="NVarChar(50)")] string tenxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bienso", DbType="VarChar(25)")] string bienso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Trangthai", DbType="Bit")] System.Nullable<bool> trangthai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaL", DbType="Int")] System.Nullable<int> maL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, tenxe, bienso, trangthai, maL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XoaXe")]
+		public int SP_XoaXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -187,11 +230,19 @@ namespace DichVuThueXe
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getMaKHCurrent")]
-		public int getMaKHCurrent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> maCur)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_addNhanVien")]
+		public int SV_addNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> manv, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(40)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(12)")] string cmnd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(5)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> check)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCur);
-			maCur = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), manv, ten, cmnd, gioitinh, ngaysinh, diachi, sdt, check);
+			check = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_addNhanVien_TaiKhoan")]
+		public int SV_addNhanVien_TaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> manv, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string taikhoan, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> check)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), manv, taikhoan, matkhau, check);
+			check = ((System.Nullable<int>)(result.GetParameterValue(3)));
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -211,35 +262,12 @@ namespace DichVuThueXe
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_addNhanVien_TaiKhoan")]
-		public int SV_addNhanVien_TaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> manv, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string taikhoan, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> check)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_CheckDN")]
+		public int SV_CheckDN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Taikhoan", DbType="NVarChar(50)")] string taikhoan, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Matkhau", DbType="NVarChar(50)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> checkDN)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), manv, taikhoan, matkhau, check);
-			check = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), taikhoan, matkhau, checkDN);
+			checkDN = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getMaNVCurrent")]
-		public int getMaNVCurrent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> maCur)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCur);
-			maCur = ((System.Nullable<int>)(result.GetParameterValue(0)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_addNhanVien")]
-		public int SV_addNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> manv, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(40)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(12)")] string cmnd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(5)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> check)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), manv, ten, cmnd, gioitinh, ngaysinh, diachi, sdt, check);
-			check = ((System.Nullable<int>)(result.GetParameterValue(7)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.reportHDByNgayBDandNgayKT")]
-		public ISingleResult<reportHDByNgayBDandNgayKTResult> reportHDByNgayBDandNgayKT([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngaybd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngaykt)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ngaybd, ngaykt);
-			return ((ISingleResult<reportHDByNgayBDandNgayKTResult>)(result.ReturnValue));
 		}
 	}
 	
