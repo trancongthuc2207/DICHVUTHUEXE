@@ -110,16 +110,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_HOADON.cs" />
+    <Compile Include="BUS\BUS_HOPDONG.cs" />
     <Compile Include="BUS\BUS_KHACHHANG.cs" />
     <Compile Include="BUS\BUS_KHACHHANG_TAIKHOAN.cs" />
     <Compile Include="BUS\BUS_LOAIDV.cs" />
     <Compile Include="BUS\BUS_NHANVIEN.cs" />
     <Compile Include="BUS\BUS_NHANVIEN_TAIKHOAN.cs" />
+    <Compile Include="BUS\BUS_XE.cs" />
+    <Compile Include="DAO\DAO_HOADON.cs" />
+    <Compile Include="DAO\DAO_HOPDONG.cs" />
     <Compile Include="DAO\DAO_KHACHHANG.cs" />
     <Compile Include="DAO\DAO_KHACHHANG_TAIKHOAN.cs" />
     <Compile Include="DAO\DAO_LOAIDV.cs" />
     <Compile Include="DAO\DAO_NHANVIEN.cs" />
     <Compile Include="DAO\DAO_NHANVIEN_TAIKHOAN.cs" />
+    <Compile Include="DAO\DAO_XE.cs" />
     <Compile Include="DICHVUTHUEXEDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,28 +143,34 @@
     <Compile Include="GUI\LOGIN\LOGIN.Designer.cs">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MENU_ChucNangMain.cs">
+    <Compile Include="GUI\MENU_MAIN\MENU_ChucNangMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MENU_ChucNangMain.Designer.cs">
+    <Compile Include="GUI\MENU_MAIN\MENU_ChucNangMain.Designer.cs">
       <DependentUpon>MENU_ChucNangMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MENU_ChucNang_DatXe.cs">
+    <Compile Include="GUI\MENU_MAIN\NHANVIEN\MENU_ChucNang_DatXe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MENU_ChucNang_DatXe.Designer.cs">
+    <Compile Include="GUI\MENU_MAIN\NHANVIEN\MENU_ChucNang_DatXe.Designer.cs">
       <DependentUpon>MENU_ChucNang_DatXe.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MENU_ChucNang_Quantrivien.cs">
+    <Compile Include="GUI\MENU_MAIN\NHANVIEN\MENU_SuaHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MENU_ChucNang_Quantrivien.Designer.cs">
+    <Compile Include="GUI\MENU_MAIN\NHANVIEN\MENU_SuaHopDong.Designer.cs">
+      <DependentUpon>MENU_SuaHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MENU_MAIN\QUANTRIVIEN\MENU_ChucNang_Quantrivien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MENU_MAIN\QUANTRIVIEN\MENU_ChucNang_Quantrivien.Designer.cs">
       <DependentUpon>MENU_ChucNang_Quantrivien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MENU_USER_KHACHHANG.cs">
+    <Compile Include="GUI\MENU_MAIN\KHACHHANG\MENU_USER_KHACHHANG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MENU_USER_KHACHHANG.Designer.cs">
+    <Compile Include="GUI\MENU_MAIN\KHACHHANG\MENU_USER_KHACHHANG.Designer.cs">
       <DependentUpon>MENU_USER_KHACHHANG.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LOGIN\SELECT_DANGKY.cs">
@@ -190,14 +202,17 @@
     <EmbeddedResource Include="GUI\LOGIN\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MENU_ChucNangMain.resx">
+    <EmbeddedResource Include="GUI\MENU_MAIN\MENU_ChucNangMain.resx">
       <DependentUpon>MENU_ChucNangMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MENU_ChucNang_DatXe.resx">
+    <EmbeddedResource Include="GUI\MENU_MAIN\NHANVIEN\MENU_ChucNang_DatXe.resx">
       <DependentUpon>MENU_ChucNang_DatXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LOGIN\SELECT_DANGKY.resx">
       <DependentUpon>SELECT_DANGKY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MENU_MAIN\NHANVIEN\MENU_SuaHopDong.resx">
+      <DependentUpon>MENU_SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

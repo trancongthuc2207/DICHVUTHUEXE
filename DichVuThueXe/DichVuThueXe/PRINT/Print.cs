@@ -4,6 +4,8 @@
 //using System.Text;
 //using System.Threading.Tasks;
 //using System.Windows.Forms;
+//using DichVuThueXe.BUS;
+//using DichVuThueXe.GUI;
 //using Spire.Doc;
 //using Spire.Doc.Documents;
 //using HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment;
@@ -12,7 +14,12 @@
 //{
 //    class Print
 //    {
-//        public Print()
+//        BUS_NHANVIEN bUS_NHANVIEN = new BUS_NHANVIEN();
+//        BUS_KHACHHANG bUS_KHACHHANG = new BUS_KHACHHANG();
+//        BUS_XE bUS_XE = new BUS_XE();
+//        BUS_LOAIDV bUS_LOAIDV = new BUS_LOAIDV();
+//        BUS_HOADON bUS_HOADON = new BUS_HOADON();
+//        public Print(HOPDONG hdg)
 //        {
 //            // Tạo đối tượng tài liệu (Document)
 //            Document doc = new Document();
@@ -20,22 +27,21 @@
 //            // Tạo đối tượng đoạn (Paragraph)
 //            Paragraph paragraph = doc.AddSection().AddParagraph();
 
-//            List<string> list = new List<string> { "One", "True", "Three" };
-//            string maKH = "1";
-//            string maHDon = "1";
-//            string TenDV = "Xe 4 bánh";
-//            string maxe = "1";
-//            string Tenxe = "Toyotal";
-//            string Sogio = "48";
-//            string gia = "5000000";
+//            string maKH = hdg.MaKH.ToString();
+//            string maHDon = bUS_HOADON.getHoaDonFromMaHD(hdg.MaHDG).MaHD.ToString();
+//            string TenDV = bUS_LOAIDV.getLOAIDV(hdg.MaL).Tenloai;
+//            string maxe = hdg.Maxe.ToString();
+//            string Tenxe = bUS_XE.getXe1(hdg.Maxe).Tenxe;
+//            string Sogio = bUS_HOADON.getHoaDonFromMaHD(hdg.MaHDG).SogioSD.ToString();
+//            string gia = bUS_HOADON.getHoaDonFromMaHD(hdg.MaHDG).Thanhtien.ToString();
 //            string ghichu = " ";
-//            string tenKH = "Trần Công Thức";
-//            string soHopDong = "1";
-//            string gt = "Nam";
-//            string cmnd = "134567";
-//            string sdt = "125124752";
-//            string nhanvien_hopdong = "1";
-//            string nhanvein_tructiepthu = "2";
+//            string tenKH = bUS_KHACHHANG.getKH1(hdg.MaKH).Ten;
+//            string soHopDong = hdg.MaHDG.ToString();
+//            string gt = bUS_KHACHHANG.getKH1(hdg.MaKH).Gioitinh;
+//            string cmnd = bUS_KHACHHANG.getKH1(hdg.MaKH).CMND;
+//            string sdt = bUS_KHACHHANG.getKH1(hdg.MaKH).SDT;
+//            string nhanvien_hopdong = bUS_NHANVIEN.getNV1(hdg.MaNV).TenNV;
+//            string nhanvein_tructiepthu = bUS_NHANVIEN.getNVFromTK(MENU_ChucNangMain.nv_tkCur).TenNV;
 //            DateTime ngayin = DateTime.Now;
 
 //            Spire.Doc.Fields.TextRange title = paragraph.AppendText("\n\n~~~~~~~~DỊCH VỤ THUÊ XE~~~~~~~~~\n");

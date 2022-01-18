@@ -33,5 +33,10 @@ namespace DichVuThueXe.DAO
             conn.SV_addNhanVien(maNV, ten, cmnd, gioitinh, ngaysinh, diachi, sdt, ref checkadd);
             return checkadd;
         }
+        public NHANVIEN getNV1(int maNV)
+        {
+            var get = (from s in conn.NHANVIENs where s.MaNV == maNV select s).First();
+            return get;
+        }
     }
 }

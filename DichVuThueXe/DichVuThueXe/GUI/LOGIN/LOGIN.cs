@@ -33,7 +33,7 @@ namespace DichVuThueXe
                 if (check == 1)
                 {
                     this.Hide();
-                    MessageBox.Show("Chào mừng bạn đăng nhập vào hệ thống cho thuê xe với tư cách là User", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Chào mừng bạn đăng nhập vào hệ thống cho thuê xe với tư cách là Nhân Viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     nvCur = bUS_NHANVIEN_TAIKHOAN.getNV_TKLogin(txtTK.Text, txtMK.Text);
                     MENU_ChucNangMain fMenu = new MENU_ChucNangMain();
                     fMenu.ShowDialog();

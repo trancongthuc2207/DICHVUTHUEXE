@@ -241,6 +241,42 @@ namespace DichVuThueXe
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ngaybd, ngaykt);
 			return ((ISingleResult<reportHDByNgayBDandNgayKTResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SuaXe")]
+		public int SP_SuaXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tenxe", DbType="NVarChar(50)")] string tenxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bienso", DbType="VarChar(25)")] string bienso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Trangthai", DbType="Bit")] System.Nullable<bool> trangthai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaL", DbType="Int")] System.Nullable<int> maL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, tenxe, bienso, trangthai, maL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XoaXe")]
+		public int SP_XoaXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ThemXe")]
+		public int SP_ThemXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tenxe", DbType="NVarChar(50)")] string tenxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bienso", DbType="VarChar(25)")] string bienso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Trangthai", DbType="Bit")] System.Nullable<bool> trangthai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaL", DbType="Int")] System.Nullable<int> maL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, tenxe, bienso, trangthai, maL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CheckXeTonTai")]
+		public int SP_CheckXeTonTai([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> exist)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, exist);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SV_CheckXeDaThue")]
+		public int SV_CheckXeDaThue([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> check)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, check);
+			check = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADON")]

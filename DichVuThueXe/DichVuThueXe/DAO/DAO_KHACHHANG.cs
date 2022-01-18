@@ -33,6 +33,10 @@ namespace DichVuThueXe.DAO
             conn.SV_addKhachHang(maKH, ten, cmnd, gioitinh, ngaysinh, diachi, sdt, ref checkadd);
             return checkadd;
         }
-        
+        public KHACHHANG getKH1(int maKH)
+        {
+            var get = (from s in conn.KHACHHANGs where s.MaKH == maKH select s).First();
+            return get;
+        }
     }
 }

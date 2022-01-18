@@ -31,5 +31,10 @@ namespace DichVuThueXe.BUS
             int? checkadd = dAO_NHANVIEN.addNhanVien(maNV, ten, cmnd, gioitinh, ngaysinh, diachi, sdt);
             return checkadd;
         }
+        public NHANVIEN getNV1(int maNV)
+        {
+            NHANVIEN nv = dAO_NHANVIEN.getNV1(maNV);
+            return nv;
+        }
     }
 }

@@ -30,13 +30,13 @@ namespace DichVuThueXe.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.hOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hTTX_DataSet = new DichVuThueXe.HTTX_DataSet();
             this.reportHDByNgayBDandNgayKTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,6 +49,7 @@ namespace DichVuThueXe.GUI
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl_Main = new System.Windows.Forms.TabControl();
             this.tabP_ThanhToan = new System.Windows.Forms.TabPage();
+            this.txtVD = new System.Windows.Forms.TextBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.gridV_HOADON = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +59,7 @@ namespace DichVuThueXe.GUI
             this.ngayinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabP_XemHD = new System.Windows.Forms.TabPage();
+            this.btnSuaHDG = new System.Windows.Forms.Button();
             this.btnRefreshHD = new System.Windows.Forms.Button();
             this.gridV_HOPDONG = new System.Windows.Forms.DataGridView();
             this.tabP_QLKH = new System.Windows.Forms.TabPage();
@@ -79,16 +81,6 @@ namespace DichVuThueXe.GUI
             this.btnBaoCao = new System.Windows.Forms.Button();
             this.btnTT = new System.Windows.Forms.Button();
             this.grBox_MenuMain = new System.Windows.Forms.GroupBox();
-            this.hOPDONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hOPDONGTableAdapter = new DichVuThueXe.HTTX_DataSetTableAdapters.HOPDONGTableAdapter();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hTTX_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportHDByNgayBDandNgayKTBindingSource)).BeginInit();
@@ -101,7 +93,6 @@ namespace DichVuThueXe.GUI
             this.tabP_QLKH.SuspendLayout();
             this.tabP_Report.SuspendLayout();
             this.grBox_MenuMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hOPDONGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // hOADONBindingSource
@@ -161,9 +152,9 @@ namespace DichVuThueXe.GUI
             this.lblTenNVTruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNVTruc.Location = new System.Drawing.Point(170, 31);
             this.lblTenNVTruc.Name = "lblTenNVTruc";
-            this.lblTenNVTruc.Size = new System.Drawing.Size(66, 24);
+            this.lblTenNVTruc.Size = new System.Drawing.Size(28, 24);
             this.lblTenNVTruc.TabIndex = 3;
-            this.lblTenNVTruc.Text = "label4";
+            this.lblTenNVTruc.Text = "...";
             // 
             // lblChucvuNVTruc
             // 
@@ -171,9 +162,9 @@ namespace DichVuThueXe.GUI
             this.lblChucvuNVTruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChucvuNVTruc.Location = new System.Drawing.Point(114, 55);
             this.lblChucvuNVTruc.Name = "lblChucvuNVTruc";
-            this.lblChucvuNVTruc.Size = new System.Drawing.Size(66, 24);
+            this.lblChucvuNVTruc.Size = new System.Drawing.Size(28, 24);
             this.lblChucvuNVTruc.TabIndex = 4;
-            this.lblChucvuNVTruc.Text = "label5";
+            this.lblChucvuNVTruc.Text = "...";
             // 
             // label6
             // 
@@ -201,6 +192,7 @@ namespace DichVuThueXe.GUI
             // tabP_ThanhToan
             // 
             this.tabP_ThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tabP_ThanhToan.Controls.Add(this.txtVD);
             this.tabP_ThanhToan.Controls.Add(this.btnThanhToan);
             this.tabP_ThanhToan.Controls.Add(this.gridV_HOADON);
             this.tabP_ThanhToan.Location = new System.Drawing.Point(4, 28);
@@ -209,6 +201,13 @@ namespace DichVuThueXe.GUI
             this.tabP_ThanhToan.Size = new System.Drawing.Size(971, 442);
             this.tabP_ThanhToan.TabIndex = 0;
             this.tabP_ThanhToan.Text = "Thanh Toán Hợp Đồng";
+            // 
+            // txtVD
+            // 
+            this.txtVD.Location = new System.Drawing.Point(102, 386);
+            this.txtVD.Name = "txtVD";
+            this.txtVD.Size = new System.Drawing.Size(245, 27);
+            this.txtVD.TabIndex = 2;
             // 
             // btnThanhToan
             // 
@@ -236,12 +235,13 @@ namespace DichVuThueXe.GUI
             this.gridV_HOADON.Name = "gridV_HOADON";
             this.gridV_HOADON.Size = new System.Drawing.Size(971, 368);
             this.gridV_HOADON.TabIndex = 0;
+            this.gridV_HOADON.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridV_HOADON_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MaHD";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn1.HeaderText = "Mã Hoá Đơn";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 120;
@@ -249,8 +249,8 @@ namespace DichVuThueXe.GUI
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "MaHDG";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn2.HeaderText = "Mã Hợp Đồng";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 150;
@@ -258,8 +258,8 @@ namespace DichVuThueXe.GUI
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "SogioSD";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn3.HeaderText = "Số Giờ Sử Dụng";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 150;
@@ -267,8 +267,8 @@ namespace DichVuThueXe.GUI
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Thanhtien";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn4.HeaderText = "Thành Tiền";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 130;
@@ -276,8 +276,8 @@ namespace DichVuThueXe.GUI
             // ngayinDataGridViewTextBoxColumn
             // 
             this.ngayinDataGridViewTextBoxColumn.DataPropertyName = "Ngayin";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ngayinDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ngayinDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.ngayinDataGridViewTextBoxColumn.HeaderText = "Ngày In";
             this.ngayinDataGridViewTextBoxColumn.Name = "ngayinDataGridViewTextBoxColumn";
             this.ngayinDataGridViewTextBoxColumn.Width = 170;
@@ -291,6 +291,7 @@ namespace DichVuThueXe.GUI
             // tabP_XemHD
             // 
             this.tabP_XemHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabP_XemHD.Controls.Add(this.btnSuaHDG);
             this.tabP_XemHD.Controls.Add(this.btnRefreshHD);
             this.tabP_XemHD.Controls.Add(this.gridV_HOPDONG);
             this.tabP_XemHD.Location = new System.Drawing.Point(4, 28);
@@ -299,6 +300,16 @@ namespace DichVuThueXe.GUI
             this.tabP_XemHD.Size = new System.Drawing.Size(971, 442);
             this.tabP_XemHD.TabIndex = 1;
             this.tabP_XemHD.Text = "Theo Dõi Hợp Đồng";
+            // 
+            // btnSuaHDG
+            // 
+            this.btnSuaHDG.Location = new System.Drawing.Point(276, 389);
+            this.btnSuaHDG.Name = "btnSuaHDG";
+            this.btnSuaHDG.Size = new System.Drawing.Size(142, 41);
+            this.btnSuaHDG.TabIndex = 2;
+            this.btnSuaHDG.Text = "Sửa Hợp Đồng";
+            this.btnSuaHDG.UseVisualStyleBackColor = true;
+            this.btnSuaHDG.Click += new System.EventHandler(this.btnSuaHDG_Click);
             // 
             // btnRefreshHD
             // 
@@ -312,22 +323,12 @@ namespace DichVuThueXe.GUI
             // 
             // gridV_HOPDONG
             // 
-            this.gridV_HOPDONG.AutoGenerateColumns = false;
             this.gridV_HOPDONG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridV_HOPDONG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewCheckBoxColumn3});
-            this.gridV_HOPDONG.DataSource = this.hOPDONGBindingSource;
             this.gridV_HOPDONG.Location = new System.Drawing.Point(0, 3);
             this.gridV_HOPDONG.Name = "gridV_HOPDONG";
             this.gridV_HOPDONG.Size = new System.Drawing.Size(971, 352);
             this.gridV_HOPDONG.TabIndex = 0;
+            this.gridV_HOPDONG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridV_HOPDONG_CellClick);
             // 
             // tabP_QLKH
             // 
@@ -419,12 +420,12 @@ namespace DichVuThueXe.GUI
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSetHD";
-            reportDataSource1.Value = this.hOADONBindingSource;
-            reportDataSource2.Name = "DataSetHD_Giua2Ngay";
-            reportDataSource2.Value = this.reportHDByNgayBDandNgayKTBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource3.Name = "DataSetHD";
+            reportDataSource3.Value = this.hOADONBindingSource;
+            reportDataSource4.Name = "DataSetHD_Giua2Ngay";
+            reportDataSource4.Value = this.reportHDByNgayBDandNgayKTBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "DichVuThueXe.Report.ReportHD.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 105);
             this.reportViewer1.Name = "reportViewer1";
@@ -530,65 +531,6 @@ namespace DichVuThueXe.GUI
             this.grBox_MenuMain.TabStop = false;
             this.grBox_MenuMain.Text = "DANH MỤC CHỨC NĂNG";
             // 
-            // hOPDONGBindingSource
-            // 
-            this.hOPDONGBindingSource.DataMember = "HOPDONG";
-            this.hOPDONGBindingSource.DataSource = this.hTTX_DataSet;
-            // 
-            // hOPDONGTableAdapter
-            // 
-            this.hOPDONGTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "MaHDG";
-            this.dataGridViewTextBoxColumn11.HeaderText = "MaHDG";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Maxe";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Maxe";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "MaKH";
-            this.dataGridViewTextBoxColumn13.HeaderText = "MaKH";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "MaL";
-            this.dataGridViewTextBoxColumn14.HeaderText = "MaL";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "MaNV";
-            this.dataGridViewTextBoxColumn15.HeaderText = "MaNV";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "NgayBD";
-            this.dataGridViewTextBoxColumn16.HeaderText = "NgayBD";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "NgayKT";
-            this.dataGridViewTextBoxColumn17.HeaderText = "NgayKT";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 170;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Trangthai";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Trangthai";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            // 
             // MENU_ChucNangMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,6 +554,7 @@ namespace DichVuThueXe.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dICHVUTHUEXEDataSet)).EndInit();
             this.tabControl_Main.ResumeLayout(false);
             this.tabP_ThanhToan.ResumeLayout(false);
+            this.tabP_ThanhToan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridV_HOADON)).EndInit();
             this.tabP_XemHD.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridV_HOPDONG)).EndInit();
@@ -619,7 +562,6 @@ namespace DichVuThueXe.GUI
             this.tabP_Report.ResumeLayout(false);
             this.tabP_Report.PerformLayout();
             this.grBox_MenuMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.hOPDONGBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,15 +635,7 @@ namespace DichVuThueXe.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.BindingSource hOPDONGBindingSource;
-        private HTTX_DataSetTableAdapters.HOPDONGTableAdapter hOPDONGTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.TextBox txtVD;
+        private System.Windows.Forms.Button btnSuaHDG;
     }
 }
