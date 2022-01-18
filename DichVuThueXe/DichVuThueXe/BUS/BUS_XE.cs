@@ -29,6 +29,11 @@ namespace DichVuThueXe.BUS
             List<XE> listXe = daoXe.getXe(tenXe);
             return listXe;
         }
+        public XE getXe1(int maXe)
+        {
+            XE xe = daoXe.getXe1(maXe);
+            return xe;
+        }
         public int getMaXeHT()
         {
             int maXeHT = daoXe.getMaXeHT();

@@ -26,8 +26,13 @@ namespace DichVuThueXe.DAO
         }
         public List<XE> getXe(string tenXe)
         {
-            var get = from s in conn.XEs where (s.Tenxe.ToLower()).Contains(tenXe.ToLower()) select s;
+            var get = from s in conn.XEs where s.Tenxe.Contains(tenXe) select s;
             return get.ToList();
+        }
+        public XE getXe1(int maXe)
+        {
+            var get = (from s in conn.XEs where s.Maxe == maXe select s).First();
+            return get;
         }
         public int getMaXeHT()
         {

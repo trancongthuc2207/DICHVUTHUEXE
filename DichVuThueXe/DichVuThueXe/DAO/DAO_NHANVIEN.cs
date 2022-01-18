@@ -27,6 +27,31 @@ namespace DichVuThueXe.DAO
             return maCur;
         }
 
+        public List<NHANVIEN> getNV()
+        {
+            var get = from s in conn.NHANVIENs select s;
+            return get.ToList();
+        }
+        public List<NHANVIEN> getNV(int maNV)
+        {
+            var get = from s in conn.NHANVIENs where s.MaNV == maNV select s;
+            return get.ToList();
+        }
+        public List<NHANVIEN> getNV(string tenNV)
+        {
+            var get = from s in conn.NHANVIENs where s.TenNV.Contains(tenNV) select s;
+            return get.ToList();
+        }
+        public NHANVIEN getNV1(int maNV)
+        {
+            var get = (from s in conn.NHANVIENs where s.MaNV == maNV select s).First();
+            return get;
+        }
+        public int getMaNVHT()
+        {
+            return conn.NHANVIENs.Select(s => s.MaNV).Max();
+        }
+
         public int? addNhanVien(int? maNV, string ten, string cmnd, string gioitinh, DateTime ngaysinh, string diachi, string sdt)
         {
             int? checkadd = 0;
