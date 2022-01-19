@@ -38,5 +38,34 @@ namespace DichVuThueXe.DAO
             var get = (from s in conn.KHACHHANGs where s.MaKH == maKH select s).First();
             return get;
         }
+
+        public dynamic ListCustomers()
+        {
+            dynamic ds = conn.KHACHHANGs.Select(s => new
+            {
+                s.MaKH,
+                s.Ten,
+                s.CMND,
+                s.Gioitinh,
+                s.Ngaysinh,
+                s.Diachi,
+                s.SDT
+            }).ToList();
+            return ds;
+        }
+        public dynamic SearchCustomer(String CustomerName)
+        {
+            dynamic ds = conn.KHACHHANGs.Where(s => s.Ten.Contains(CustomerName)).Select(s => new
+            {
+                s.MaKH,
+                s.Ten,
+                s.CMND,
+                s.Gioitinh,
+                s.Ngaysinh,
+                s.Diachi,
+                s.SDT
+            }).ToList();
+            return ds;
+        }
     }
 }

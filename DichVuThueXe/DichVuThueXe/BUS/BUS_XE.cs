@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DichVuThueXe.DAO;
 
 namespace DichVuThueXe.BUS
@@ -68,6 +69,10 @@ namespace DichVuThueXe.BUS
         public void setTTChoXeCoHD(int maXe)
         {
             daoXe.setTTChoXeCoHD(maXe);
+        }
+        public void ListVehicle(DataGridView dg, int TypeID)
+        {
+            dg.DataSource = daoXe.ListVehicle(TypeID);
         }
     }
 }

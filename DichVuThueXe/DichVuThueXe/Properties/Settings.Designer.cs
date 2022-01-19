@@ -32,5 +32,15 @@ namespace DichVuThueXe.Properties {
                 return ((string)(this["DICHVUTHUEXEConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=DICHVUTHUEXE;Integrated Security=True")]
+        public string DICHVUTHUEXEConnectionString1 {
+            get {
+                return ((string)(this["DICHVUTHUEXEConnectionString1"]));
+            }
+        }
     }
 }

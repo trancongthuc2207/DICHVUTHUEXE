@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DichVuThueXe.DAO;
 
 
@@ -20,6 +21,12 @@ namespace DichVuThueXe.BUS
         {
             LOAIDV loai = dAO_LOAIDV.getLOAIDV(ldv);
             return loai ;
+        }
+        public void ListServiceType(ComboBox cb)
+        {
+            cb.DataSource = dAO_LOAIDV.ListServiceType();
+            cb.DisplayMember = "Tenloai";
+            cb.ValueMember = "MaL";
         }
     }
 }

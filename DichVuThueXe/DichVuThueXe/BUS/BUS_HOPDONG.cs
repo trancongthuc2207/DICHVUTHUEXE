@@ -36,5 +36,22 @@ namespace DichVuThueXe.BUS
         {
             return dAO_HOPDONG.getHopDong();
         }
+        public int? GetMaxIDContract()
+        {
+            int? MaxID = dAO_HOPDONG.GetMaxContractID();
+            return MaxID;
+        }
+        public bool AddContract(HOPDONG HopDong)
+        {
+            try
+            {
+                dAO_HOPDONG.AddContract(HopDong);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

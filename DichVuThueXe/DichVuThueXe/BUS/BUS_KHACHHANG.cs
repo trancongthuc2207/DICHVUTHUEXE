@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DichVuThueXe.DAO;
 
 namespace DichVuThueXe.BUS
@@ -31,6 +32,14 @@ namespace DichVuThueXe.BUS
         {
             KHACHHANG kh = dAO_KHACHHANG.getKH1(maKH);
             return kh;
+        }
+        public void ListCustomers(DataGridView dg)
+        {
+            dg.DataSource = dAO_KHACHHANG.ListCustomers();
+        }
+        public void SearchCustomer(DataGridView dg, String CustomerName)
+        {
+            dg.DataSource = dAO_KHACHHANG.SearchCustomer(CustomerName);
         }
     }
 }

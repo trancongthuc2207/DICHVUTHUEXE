@@ -79,5 +79,17 @@ namespace DichVuThueXe.DAO
             sua.Trangthai = true;
             conn.SubmitChanges();
         }
+        public dynamic ListVehicle(int TypeID)
+        {
+            dynamic ds = conn.XEs.Where(s => (s.Trangthai == false) && (s.MaL == TypeID)).Select(s => new
+            {
+                s.Maxe,
+                s.Tenxe,
+                s.Bienso,
+                s.Trangthai,
+                s.MaL
+            }).ToList();
+            return ds;
+        }
     }
 }

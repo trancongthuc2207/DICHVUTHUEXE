@@ -19,5 +19,14 @@ namespace DichVuThueXe.DAO
             LOAIDV dvData = conn.LOAIDVs.FirstOrDefault(s => s.MaL == mdv);
             return dvData;
         }
+        public dynamic ListServiceType()
+        {
+            dynamic ds = conn.LOAIDVs.Select(s => new
+            {
+                s.MaL,
+                s.Tenloai
+            }).ToList();
+            return ds;
+        }
     }
 }

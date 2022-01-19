@@ -40,5 +40,17 @@ namespace DichVuThueXe.DAO
             var get = from s in conn.HOPDONGs select s;
             return get.ToList();
         }
+
+        public int? GetMaxContractID()
+        {
+            int? MaxID = 0;
+            conn.GetMaxContractID(ref MaxID);
+            return MaxID;
+        }
+        public void AddContract(HOPDONG HopDong)
+        {
+            conn.AddContract(HopDong.MaHDG, HopDong.Maxe, HopDong.MaKH, HopDong.MaL, HopDong.MaNV, HopDong.NgayBD, HopDong.NgayKT, HopDong.Trangthai);
+            conn.SubmitChanges();
+        }
     }
 }
