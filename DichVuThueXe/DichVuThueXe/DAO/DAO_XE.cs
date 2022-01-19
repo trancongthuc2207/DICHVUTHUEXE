@@ -29,6 +29,11 @@ namespace DichVuThueXe.DAO
             var get = from s in conn.XEs where s.Tenxe.Contains(tenXe) select s;
             return get.ToList();
         }
+        public List<XE> getXeTheoMaLoai(int maLoai)
+        {
+            var get = from s in conn.XEs where s.MaL == maLoai select s;
+            return get.ToList();
+        }
         public XE getXe1(int maXe)
         {
             var get = (from s in conn.XEs where s.Maxe == maXe select s).First();
@@ -50,12 +55,24 @@ namespace DichVuThueXe.DAO
         }
         public void suaXe(int maXe, string tenXe, string bienSo, bool trangThai, int maLoai)
         {
-            //conn.SP_SuaXe(maXe, tenXe, bienSo, trangThai, maLoai);
+            conn.SP_SuaXe(maXe, tenXe, bienSo, trangThai, maLoai);
+            //var sua = (from s in conn.XEs where s.Maxe == maXe select s).First();
+            //sua.Tenxe = tenXe;
+            //sua.Bienso = bienSo;
+            //sua.Trangthai = trangThai;
+            //sua.MaL = maLoai;
+            //conn.SubmitChanges();
+        }
+        public void setTTChoXeCoHD(int maXe)
+        {
             var sua = (from s in conn.XEs where s.Maxe == maXe select s).First();
-            sua.Tenxe = tenXe;
-            sua.Bienso = bienSo;
-            sua.Trangthai = trangThai;
-            sua.MaL = maLoai;
+            sua.Trangthai = true;
+            conn.SubmitChanges();
+        }
+        public void setTTChoXeHetHD(int maXe)
+        {
+            var sua = (from s in conn.XEs where s.Maxe == maXe select s).First();
+            sua.Trangthai = false;
             conn.SubmitChanges();
         }
         public void xoaXe(int maXe)

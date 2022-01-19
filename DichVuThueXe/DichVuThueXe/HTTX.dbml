@@ -134,6 +134,21 @@
     <Parameter Name="exist" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_DoiMatKhauNV" Method="SP_DoiMatKhauNV">
+    <Parameter Name="maNV" Type="System.Int32" DbType="Int" />
+    <Parameter Name="matKhau" Type="System.String" DbType="NVarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SuaNV" Method="SP_SuaNV">
+    <Parameter Name="maNV" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tenNV" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="cmnd" Type="System.String" DbType="NVarChar(12)" />
+    <Parameter Name="gioiTinh" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="ngaySinh" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sdt" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.SP_SuaXe" Method="SP_SuaXe">
     <Parameter Name="Maxe" Parameter="maxe" Type="System.Int32" DbType="Int" />
     <Parameter Name="Tenxe" Parameter="tenxe" Type="System.String" DbType="NVarChar(50)" />
@@ -142,12 +157,25 @@
     <Parameter Name="MaL" Parameter="maL" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_thayDoiChucVu" Method="SP_thayDoiChucVu">
+    <Parameter Name="maNV" Type="System.Int32" DbType="Int" />
+    <Parameter Name="viTri" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.SP_ThemXe" Method="SP_ThemXe">
     <Parameter Name="Maxe" Parameter="maxe" Type="System.Int32" DbType="Int" />
     <Parameter Name="Tenxe" Parameter="tenxe" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="Bienso" Parameter="bienso" Type="System.String" DbType="VarChar(25)" />
     <Parameter Name="Trangthai" Parameter="trangthai" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="MaL" Parameter="maL" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XoaNV" Method="SP_XoaNV">
+    <Parameter Name="maNV" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XoaNVTaiKhoan" Method="SP_XoaNVTaiKhoan">
+    <Parameter Name="maNV" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SP_XoaXe" Method="SP_XoaXe">

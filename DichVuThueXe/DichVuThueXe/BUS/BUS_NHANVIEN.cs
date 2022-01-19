@@ -58,5 +58,13 @@ namespace DichVuThueXe.BUS
             int? checkadd = dAO_NHANVIEN.addNhanVien(maNV, ten, cmnd, gioitinh, ngaysinh, diachi, sdt);
             return checkadd;
         }
+        public void suaNV(int maNV, string tenNV, string cmnd, string gioiTinh, DateTime ngaySinh, string diaChi, string sdt)
+        {
+            dAO_NHANVIEN.suaNV(maNV, tenNV, cmnd, gioiTinh, ngaySinh, diaChi, sdt);
+        }
+        public void xoaNV(int maNV)
+        {
+            dAO_NHANVIEN.xoaNV(maNV);
+        }
     }
 }

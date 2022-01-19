@@ -22,21 +22,23 @@ namespace DichVuThueXe.GUI
         private CheckBox checkboxHeaderNV;
         BUS_XE busXe;
         BUS_NHANVIEN busNV;
+        BUS_NHANVIEN_TAIKHOAN busNVTaiKhoan;
 
         public MENU_ChucNang_Quantrivien()
         {
             InitializeComponent();
             busXe = new BUS_XE();
             busNV = new BUS_NHANVIEN();
+            busNVTaiKhoan = new BUS_NHANVIEN_TAIKHOAN();
 
             /////////////////////////////////////////// XE
-            this.txtTimKiem.ForeColor = Color.LightGray;
+            this.txtTimKiem.ForeColor = Color.Gray;
             this.txtTimKiem.Text = " Tìm kiếm trên bảng";
             this.txtTimKiem.Leave += new System.EventHandler(this.txtTimKiem_Leave);
             this.txtTimKiem.Enter += new System.EventHandler(this.txtTimKiem_Enter);
 
             /////////////////////////////////////////// NV
-            this.txtTimKiemNV.ForeColor = Color.LightGray;
+            this.txtTimKiemNV.ForeColor = Color.Gray;
             this.txtTimKiemNV.Text = " Tìm kiếm trên bảng";
             this.txtTimKiemNV.Leave += new System.EventHandler(this.txtTimKiemNV_Leave);
             this.txtTimKiemNV.Enter += new System.EventHandler(this.txtTimKiemNV_Enter);
@@ -50,6 +52,10 @@ namespace DichVuThueXe.GUI
             /////////////////////////////////////////// NV
             this.loadDataTableNV();
             this.initInputNV();
+            dtpNgaySinh.Format = DateTimePickerFormat.Custom;
+            dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+
+            //dinh dang 2 column xe nv
 
             /////////////////////////////////////////// COLUMN TAB XE
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
@@ -59,8 +65,8 @@ namespace DichVuThueXe.GUI
 
             Rectangle rect = this.tbXe.GetCellDisplayRectangle(0, -1, false);
 
-            rect.X = rect.Location.X + (rect.Width / 14);
-            rect.Y = rect.Location.Y + (rect.Height / 12);
+            rect.X = rect.Location.X + (rect.Width / 16);
+            rect.Y = rect.Location.Y + (rect.Height / 16);
             checkboxHeader = new CheckBox();
             checkboxHeader.BackColor = Color.FromArgb(0, 80, 200);
             checkboxHeader.Name = "checkBoxHeader";
@@ -80,15 +86,15 @@ namespace DichVuThueXe.GUI
             checkBoxColumnNV.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.tbNV.Columns.Insert(0, checkBoxColumnNV);
 
-            Rectangle rectNV = this.tbNV.GetCellDisplayRectangle(0, -1, false);
+            //Rectangle rectNV = this.tbNV.GetCellDisplayRectangle(0, -1, false);
 
-            rectNV.X = rectNV.Location.X + (rectNV.Width / 14);
-            rectNV.Y = rectNV.Location.Y + (rectNV.Height / 12);
+            rect.X = rect.Location.X + (rect.Width / 24);
+            rect.Y = rect.Location.Y + (rect.Height / 24);
             checkboxHeaderNV = new CheckBox();
             checkboxHeaderNV.BackColor = Color.FromArgb(0, 80, 200);
             checkboxHeaderNV.Name = "checkBoxHeader";
             checkboxHeaderNV.Size = new Size(18, 18);
-            checkboxHeaderNV.Location = rectNV.Location;
+            checkboxHeaderNV.Location = rect.Location;
             checkboxHeaderNV.CheckAlign = ContentAlignment.MiddleCenter;
             checkBoxColumnNV.ReadOnly = false;
 
@@ -119,6 +125,7 @@ namespace DichVuThueXe.GUI
             }
             unCheckedAll = true;
         }
+
         public void initInputXe()
         {
             maXeHT = busXe.getMaXeHT();
@@ -132,23 +139,31 @@ namespace DichVuThueXe.GUI
             else
                 this.rbtnChuaDiChuyen.Checked = true;
         }
+
         public void loadDataTableXe()
         {
+            this.busXe = new BUS_XE();
             this.tbXe.DataSource = busXe.getXe();
         }
+
         public void loadDataTableXe(int maXe)
         {
+            this.busXe = new BUS_XE();
             this.tbXe.DataSource = busXe.getXe(maXe);
         }
+
         public void loadDataTableXe(string tenXe)
         {
+            this.busXe = new BUS_XE();
             this.tbXe.DataSource = busXe.getXe(tenXe);
         }
+
         private void tabPage1_Click(object sender, EventArgs e)
         {
             this.loadDataTableXe();
             this.initInputXe();
         }
+
         private void tbXe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (this.tbXe.SelectedCells.Count == 0)
@@ -218,6 +233,7 @@ namespace DichVuThueXe.GUI
                 MessageBox.Show("Chỉ chọn dòng tương ứng", "Cảnh báo!");
             }
         }
+
         private void txtTimKiem_Leave(object sender, EventArgs e)
         {
             if (this.txtTimKiem.Text == "")
@@ -226,6 +242,7 @@ namespace DichVuThueXe.GUI
                 this.txtTimKiem.ForeColor = Color.Gray;
             }
         }
+
         private void txtTimKiem_Enter(object sender, EventArgs e)
         {
             if (this.txtTimKiem.Text == " Tìm kiếm trên bảng")
@@ -234,6 +251,7 @@ namespace DichVuThueXe.GUI
                 this.txtTimKiem.ForeColor = Color.Black;
             }
         }
+
         private void txtTimKiem_KeyUp(object sender, KeyEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(this.txtTimKiem.Text) || string.IsNullOrEmpty(this.txtTimKiem.Text) && Convert.ToInt32(e.KeyCode) == 8)
@@ -246,6 +264,7 @@ namespace DichVuThueXe.GUI
                     this.loadDataTableXe(this.txtTimKiem.Text.Trim());
             }
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             //if (this.isXeInputNotNull())
@@ -283,6 +302,7 @@ namespace DichVuThueXe.GUI
             //else
             //    MessageBox.Show("Chưa nhập đủ thông tin", "Thông báo");
         }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             //if (this.isXeInputNotNull())
@@ -294,10 +314,10 @@ namespace DichVuThueXe.GUI
             int maXe = int.Parse(this.txtMaXe.Text);
             string tenXe = this.txtTenXe.Text;
             string bienSo = this.txtBienSo.Text;
+            int maLoai = int.Parse(this.txtMaLoai.Text);
             bool trangThai = false;
             if (rbtnDiChuyen.Checked)
                 trangThai = true;
-            int maLoai = int.Parse(this.txtMaLoai.Text);
             try
             {
                 busXe.suaXe(maXe, tenXe, bienSo, trangThai, maLoai);
@@ -319,6 +339,7 @@ namespace DichVuThueXe.GUI
             //else
             //    MessageBox.Show("Chưa nhập đủ thông tin", "Thông báo");
         }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Xác nhận xóa?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -327,7 +348,6 @@ namespace DichVuThueXe.GUI
                 {
                     busXe.xoaXe(int.Parse(this.txtMaXe.Text));
                     MessageBox.Show("Xóa thành công!!!", "Thông báo");
-                    this.loadDataTableXe();
                     this.btnRefresh_Click(sender, e);
                 }
                 catch (SqlException ex)
@@ -336,6 +356,7 @@ namespace DichVuThueXe.GUI
                 }
             }
         }
+
         private void btnXoaNhieu_Click(object sender, EventArgs e)
         {
             bool checkBoxCells = false;
@@ -367,6 +388,7 @@ namespace DichVuThueXe.GUI
                             {
                                 MessageBox.Show("Xóa thất bại!!!", "Lỗi!");
                                 checkXoa = false;
+                                this.btnRefresh_Click(sender, e);
                             }
                         }
                     }
@@ -374,24 +396,30 @@ namespace DichVuThueXe.GUI
                 if (checkXoa)
                 {
                     MessageBox.Show("Xóa hàng loạt thành công!!!", "Thông báo");
-                    this.loadDataTableXe();
                     this.btnRefresh_Click(sender, e);
                 }
             }
             if (!checkBoxCells)
                 MessageBox.Show("Bạn chưa lựa chọn dòng nào để xóa!", "Thông báo");
         }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            this.txtTimKiem.ForeColor = Color.Gray;
+            this.txtTimKiem.Text = " Tìm kiếm trên bảng";
+
             maXeHT = busXe.getMaXeHT() + 1;
             this.txtMaXe.Text = maXeHT.ToString();
+
             this.txtTenXe.Text = null;
             this.txtBienSo.Text = null;
             this.rbtnDiChuyen.Checked = false;
             this.rbtnChuaDiChuyen.Checked = false;
             this.txtMaLoai.Text = null;
+
             this.loadDataTableXe();
         }
+
         public void resetTextBox(int maXe)
         {
             var xe = busXe.getXe(maXe).First();
@@ -404,6 +432,7 @@ namespace DichVuThueXe.GUI
             else
                 this.rbtnChuaDiChuyen.Checked = true;
         }
+
         public bool IsNumber(string pValue)
         {
             foreach (Char c in pValue)
@@ -413,6 +442,7 @@ namespace DichVuThueXe.GUI
             }
             return true;
         }
+
         public bool isXeInputNotNull()
         {
             if (this.txtTenXe.Text == null || this.txtBienSo.Text == null || this.txtMaLoai.Text == null)
@@ -420,12 +450,14 @@ namespace DichVuThueXe.GUI
                     return false;
             return true;
         }
+
         public bool isXeInputExactly()
         {
             if (!this.IsNumber(this.txtMaLoai.Text))
                 return false;
             return true;
         }
+
         //////////////////////////////// CHỨC NĂNG QUẢN TRỊ NHÂN VIÊN ////////////////////////////////
         private void checkboxHeaderNV_CheckedChanged(object sender, EventArgs e)
         {
@@ -448,6 +480,7 @@ namespace DichVuThueXe.GUI
             }
             unCheckedAllNV = true;
         }
+
         public void initInputNV()
         {
             maNVHT = busNV.getMaNVHT();
@@ -456,27 +489,35 @@ namespace DichVuThueXe.GUI
             this.txtTenNV.Text = nv.TenNV;
             this.txtCMND.Text = nv.CMND;
             this.txtGioiTinh.Text = nv.Gioitinh;
-            this.dtpNgaySinh.Text = nv.Ngaysinh.ToString();
+            this.dtpNgaySinh.Value = (DateTime)nv.Ngaysinh;
             this.txtDiaChi.Text = nv.Diachi;
             this.txtSDT.Text = nv.SDT;
         }
+
         public void loadDataTableNV()
         {
+            this.busNV = new BUS_NHANVIEN();
             this.tbNV.DataSource = busNV.getNV();
         }
+
         public void loadDataTableNV(int maNV)
         {
+            this.busNV = new BUS_NHANVIEN();
             this.tbNV.DataSource = busNV.getNV(maNV);
         }
+
         public void loadDataTableNV(string tenNV)
         {
+            this.busNV = new BUS_NHANVIEN();
             this.tbNV.DataSource = busNV.getNV(tenNV);
         }
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
             this.loadDataTableNV();
             this.initInputNV();
         }
+
         private void tbNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (this.tbNV.SelectedCells.Count == 0)
@@ -532,7 +573,13 @@ namespace DichVuThueXe.GUI
                 if (this.tbNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
                     this.tbNV.CurrentRow.Selected = true;
-
+                    this.txtMaNV.Text = this.tbNV.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    this.txtTenNV.Text = this.tbNV.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    this.txtCMND.Text = this.tbNV.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    this.txtGioiTinh.Text = this.tbNV.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    this.dtpNgaySinh.Value = (DateTime)this.tbNV.Rows[e.RowIndex].Cells[5].Value;
+                    this.txtDiaChi.Text = this.tbNV.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    this.txtSDT.Text = this.tbNV.Rows[e.RowIndex].Cells[7].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -540,5 +587,166 @@ namespace DichVuThueXe.GUI
                 MessageBox.Show("Chỉ chọn dòng tương ứng", "Cảnh báo!");
             }
         }
+
+        private void txtTimKiemNV_Leave(object sender, EventArgs e)
+        {
+            if (this.txtTimKiemNV.Text == "")
+            {
+                this.txtTimKiemNV.Text = " Tìm kiếm trên bảng";
+                this.txtTimKiemNV.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtTimKiemNV_Enter(object sender, EventArgs e)
+        {
+            if (this.txtTimKiemNV.Text == " Tìm kiếm trên bảng")
+            {
+                this.txtTimKiemNV.Text = "";
+                this.txtTimKiemNV.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtTimKiemNV_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.toolTipTimKiemNV.SetToolTip(this.txtTimKiemNV, "Nhấn Enter để tìm kiếm nếu chứa ký tự có dấu.");
+        }
+
+        private void txtTimKiemNV_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.txtTimKiemNV.Text) || string.IsNullOrEmpty(this.txtTimKiemNV.Text) && Convert.ToInt32(e.KeyCode) == 8)
+                this.loadDataTableNV();
+            if (!(string.IsNullOrWhiteSpace(this.txtTimKiemNV.Text) && string.IsNullOrEmpty(this.txtTimKiemNV.Text)))
+            {
+                if (this.IsNumber(this.txtTimKiemNV.Text))
+                    this.loadDataTableNV(int.Parse(this.txtTimKiemNV.Text));
+                if (!this.IsNumber(this.txtTimKiemNV.Text))
+                    this.loadDataTableNV(this.txtTimKiemNV.Text.Trim());
+            }
+        }
+
+        private void btnSuaNV_Click(object sender, EventArgs e)
+        {
+            int maNV = int.Parse(this.txtMaNV.Text);
+            string tenNV = this.txtTenNV.Text;
+            string cmnd = this.txtCMND.Text;
+            string gioiTinh = this.txtGioiTinh.Text;
+            DateTime ngaySinh = this.dtpNgaySinh.Value;
+            string diaChi = this.txtDiaChi.Text;
+            string sdt = this.txtSDT.Text;
+            try
+            {
+                busNV.suaNV(maNV, tenNV, cmnd, gioiTinh, ngaySinh, diaChi, sdt);
+                MessageBox.Show("Sửa thành công!!!", "Thông báo");
+                this.resetTextBoxNV(maNV);
+                this.loadDataTableNV();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Sửa thất bại!!!", "Lỗi!");
+            }
+        }
+
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận xóa?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    busNVTaiKhoan.xoaNVTaiKhoan(int.Parse(this.txtMaNV.Text));
+                    busNV.xoaNV(int.Parse(this.txtMaNV.Text));
+                    MessageBox.Show("Xóa thành công!!!", "Thông báo");
+                    this.btnRefreshNV_Click(sender, e);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Xóa thất bại!!!", "Lỗi!");
+                }
+            }
+        }
+
+        private void btnXoaNhieuNV_Click(object sender, EventArgs e)
+        {
+            bool checkBoxCells = false;
+            for (int i = this.tbNV.RowCount - 1; i >= 0; i--)
+            {
+                DataGridViewRow row = this.tbNV.Rows[i];
+                if (Convert.ToBoolean(row.Cells[0].Value))
+                {
+                    checkBoxCells = true;
+                    break;
+                }
+            }
+            if (checkBoxCells)
+            {
+                bool checkXoa = true;
+                if (MessageBox.Show("Xác nhận xóa?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    for (int i = this.tbNV.RowCount - 1; i >= 0; i--)
+                    {
+                        DataGridViewRow row = this.tbNV.Rows[i];
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            try
+                            {
+                                int maNV = Convert.ToInt32(row.Cells[1].Value);
+                                busNVTaiKhoan.xoaNVTaiKhoan(maNV);
+                                busNV.xoaNV(maNV);
+                            }
+                            catch (SqlException ex)
+                            {
+                                MessageBox.Show("Xóa thất bại!!!", "Lỗi!");
+                                checkXoa = false;
+                                this.btnRefreshNV_Click(sender, e);
+                            }
+                        }
+                    }
+                }
+                if (checkXoa)
+                {
+                    MessageBox.Show("Xóa hàng loạt thành công!!!", "Thông báo");
+                    this.btnRefreshNV_Click(sender, e);
+                }
+            }
+            if (!checkBoxCells)
+                MessageBox.Show("Bạn chưa lựa chọn dòng nào để xóa!", "Thông báo");
+        }
+
+        private void btnRefreshNV_Click(object sender, EventArgs e)
+        {
+            this.txtTimKiem.ForeColor = Color.Gray;
+            this.txtTimKiem.Text = " Tìm kiếm trên bảng";
+
+            maNVHT = busNV.getMaNVHT();
+
+            this.txtMaNV.Text = null;
+            this.txtTenNV.Text = null;
+            this.txtCMND.Text = null;
+            this.txtGioiTinh.Text = null;
+            this.dtpNgaySinh.Value = DateTime.Now;
+            this.txtDiaChi.Text = null;
+            this.txtSDT.Text = null;
+
+            this.loadDataTableNV();
+        }
+
+        private void btnDoiMK_Click(object sender, EventArgs e)
+        {
+            MENU_ChucNang_Quantrivien_NVTaiKhoan FMenu_Quantri_NVTaiKhoan = new MENU_ChucNang_Quantrivien_NVTaiKhoan();
+            FMenu_Quantri_NVTaiKhoan.ShowDialog();
+        }
+
+        public void resetTextBoxNV(int maNV)
+        {
+            var nv = busNV.getNV(maNV).First();
+            this.txtMaNV.Text = nv.MaNV.ToString();
+            this.txtTenNV.Text = nv.TenNV;
+            this.txtCMND.Text = nv.CMND;
+            this.txtGioiTinh.Text = nv.Gioitinh;
+            this.dtpNgaySinh.Value = (DateTime)nv.Ngaysinh;
+            this.txtDiaChi.Text = nv.Diachi;
+            this.txtSDT.Text = nv.SDT;
+        }
+
+        //hint vuot qua so luong ky tu
     }
 }

@@ -22,6 +22,12 @@ namespace DichVuThueXe.BUS
             return maCur;
         }
 
+        public KHACHHANG getKH1(int maKH)
+        {
+            KHACHHANG kh = dAO_KHACHHANG.getKH1(maKH);
+            return kh;
+        }
+
         public int? addKhachHang(int? maKH, string ten, string cmnd, string gioitinh, DateTime ngaysinh, string diachi, string sdt)
         {
             int? checkadd = dAO_KHACHHANG.addKhachHang(maKH, ten, cmnd, gioitinh, ngaysinh, diachi, sdt);

@@ -42,7 +42,6 @@ namespace DichVuThueXe.GUI
             // TODO: This line of code loads data into the 'hTTX_DataSet.HOADON' table. You can move, or remove it, as needed.
             this.hOADONTableAdapter.Fill(this.hTTX_DataSet.HOADON);
 
-
             this.reportViewer1.RefreshReport();
         }
 

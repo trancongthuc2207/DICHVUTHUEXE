@@ -17,6 +17,30 @@ namespace DichVuThueXe.BUS
             dAO_NHANVIEN_TAIKHOAN = new DAO_NHANVIEN_TAIKHOAN();
         }
 
+        public List<NHANVIEN_TAIKHOAN> getListNV_TK()
+        {
+            List<NHANVIEN_TAIKHOAN> listNVTK = dAO_NHANVIEN_TAIKHOAN.getListNV_TK();
+            return listNVTK;
+        }
+        public List<NHANVIEN_TAIKHOAN> getListNV_TK(int maNV)
+        {
+            List<NHANVIEN_TAIKHOAN> listNVTK = dAO_NHANVIEN_TAIKHOAN.getListNV_TK(maNV);
+            return listNVTK;
+        }
+        public List<NHANVIEN_TAIKHOAN> getListNV_TK(string taiKhoan)
+        {
+            List<NHANVIEN_TAIKHOAN> listNVTK = dAO_NHANVIEN_TAIKHOAN.getListNV_TK(taiKhoan);
+            return listNVTK;
+        }
+        public void doiMKNV(int maNV, string matKhau)
+        {
+            dAO_NHANVIEN_TAIKHOAN.doiMKNV(maNV, matKhau);
+        }
+        public void doiChucVu(int maNV, int viTri)
+        {
+            dAO_NHANVIEN_TAIKHOAN.doiChucVu(maNV, viTri);
+        }
+
         public int? getCheckDangNhap(String tk, String mk) 
         {
             int? check = dAO_NHANVIEN_TAIKHOAN.getCheckTAIKHOAN_DN(tk, mk);
@@ -39,6 +63,11 @@ namespace DichVuThueXe.BUS
         {
             int? checkadd = dAO_NHANVIEN_TAIKHOAN.addNhanVien_TaiKhoan(manv, taikhoan, matkhau);
             return checkadd;
+        }
+
+        public void xoaNVTaiKhoan(int maNV)
+        {
+            dAO_NHANVIEN_TAIKHOAN.xoaNVTaiKhoan(maNV);
         }
     }
 }

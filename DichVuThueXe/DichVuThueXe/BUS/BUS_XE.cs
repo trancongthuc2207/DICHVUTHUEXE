@@ -29,6 +29,11 @@ namespace DichVuThueXe.BUS
             List<XE> listXe = daoXe.getXe(tenXe);
             return listXe;
         }
+        public List<XE> getXeTheoMaLoai(int maLoai)
+        {
+            List<XE> listXe = daoXe.getXeTheoMaLoai(maLoai);
+            return listXe;
+        }
         public XE getXe1(int maXe)
         {
             XE xe = daoXe.getXe1(maXe);
@@ -51,6 +56,14 @@ namespace DichVuThueXe.BUS
         public void suaXe(int maXe, string tenXe, string bienSo, bool trangThai, int maLoai)
         {
             daoXe.suaXe(maXe, tenXe, bienSo, trangThai, maLoai);
+        }
+        public void setTTChoXeCoHD(int maXe)
+        {
+            daoXe.setTTChoXeCoHD(maXe);
+        }
+        public void setTTChoXeHetHD(int maXe)
+        {
+            daoXe.setTTChoXeHetHD(maXe);
         }
         public void xoaXe(int maXe)
         {

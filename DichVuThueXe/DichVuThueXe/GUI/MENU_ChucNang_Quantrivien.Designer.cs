@@ -42,6 +42,7 @@ namespace DichVuThueXe.GUI
             this.tbNV = new System.Windows.Forms.DataGridView();
             this.btnXoaNhieuNV = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtTimKiemNV = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -66,6 +67,7 @@ namespace DichVuThueXe.GUI
             this.tbXe = new System.Windows.Forms.DataGridView();
             this.btnXoaNhieu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtnChuaDiChuyen = new System.Windows.Forms.RadioButton();
             this.rbtnDiChuyen = new System.Windows.Forms.RadioButton();
@@ -81,6 +83,7 @@ namespace DichVuThueXe.GUI
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nHANVIENTableAdapter = new DichVuThueXe.HTTX_DataSetTableAdapters.NHANVIENTableAdapter();
+            this.toolTipTimKiemNV = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hTTX_DataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -120,7 +123,7 @@ namespace DichVuThueXe.GUI
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1360, 450);
+            this.tabPage2.Size = new System.Drawing.Size(1360, 474);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Quản Trị Nhân Viên";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -128,22 +131,23 @@ namespace DichVuThueXe.GUI
             // 
             // btnDoiMK
             // 
-            this.btnDoiMK.Location = new System.Drawing.Point(6, 407);
+            this.btnDoiMK.Location = new System.Drawing.Point(6, 432);
             this.btnDoiMK.Name = "btnDoiMK";
             this.btnDoiMK.Size = new System.Drawing.Size(125, 30);
             this.btnDoiMK.TabIndex = 4;
             this.btnDoiMK.Text = "Đổi mật khẩu";
             this.btnDoiMK.UseVisualStyleBackColor = true;
+            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnSuaNV);
             this.groupBox4.Controls.Add(this.btnXoaNV);
             this.groupBox4.Controls.Add(this.btnRefreshNV);
-            this.groupBox4.Location = new System.Drawing.Point(6, 287);
+            this.groupBox4.Location = new System.Drawing.Point(6, 312);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(370, 114);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức năng";
             // 
@@ -155,6 +159,7 @@ namespace DichVuThueXe.GUI
             this.btnSuaNV.TabIndex = 0;
             this.btnSuaNV.Text = "Sửa";
             this.btnSuaNV.UseVisualStyleBackColor = true;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnXoaNV
             // 
@@ -164,6 +169,7 @@ namespace DichVuThueXe.GUI
             this.btnXoaNV.TabIndex = 0;
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.UseVisualStyleBackColor = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
             // btnRefreshNV
             // 
@@ -173,6 +179,7 @@ namespace DichVuThueXe.GUI
             this.btnRefreshNV.TabIndex = 0;
             this.btnRefreshNV.Text = "Làm mới";
             this.btnRefreshNV.UseVisualStyleBackColor = true;
+            this.btnRefreshNV.Click += new System.EventHandler(this.btnRefreshNV_Click);
             // 
             // tbNV
             // 
@@ -181,21 +188,23 @@ namespace DichVuThueXe.GUI
             this.tbNV.Name = "tbNV";
             this.tbNV.RowHeadersWidth = 51;
             this.tbNV.RowTemplate.Height = 24;
-            this.tbNV.Size = new System.Drawing.Size(972, 424);
-            this.tbNV.TabIndex = 2;
+            this.tbNV.Size = new System.Drawing.Size(972, 449);
+            this.tbNV.TabIndex = 0;
             this.tbNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbNV_CellClick);
             // 
             // btnXoaNhieuNV
             // 
-            this.btnXoaNhieuNV.Location = new System.Drawing.Point(251, 407);
+            this.btnXoaNhieuNV.Location = new System.Drawing.Point(251, 432);
             this.btnXoaNhieuNV.Name = "btnXoaNhieuNV";
             this.btnXoaNhieuNV.Size = new System.Drawing.Size(125, 30);
             this.btnXoaNhieuNV.TabIndex = 0;
             this.btnXoaNhieuNV.Text = "Xóa hàng loạt";
             this.btnXoaNhieuNV.UseVisualStyleBackColor = true;
+            this.btnXoaNhieuNV.Click += new System.EventHandler(this.btnXoaNhieuNV_Click);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.dtpNgaySinh);
             this.groupBox5.Controls.Add(this.txtTimKiemNV);
             this.groupBox5.Controls.Add(this.txtSDT);
@@ -213,14 +222,25 @@ namespace DichVuThueXe.GUI
             this.groupBox5.Controls.Add(this.label8);
             this.groupBox5.Location = new System.Drawing.Point(6, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(370, 275);
+            this.groupBox5.Size = new System.Drawing.Size(370, 300);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông tin nhập liệu";
             // 
+            // label12
+            // 
+            this.label12.AccessibleName = "";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 56);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(300, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "(i): Keyboard layout ở định dạng ENG để có hiệu xuất cao nhất";
+            // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(113, 171);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(113, 198);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(242, 22);
             this.dtpNgaySinh.TabIndex = 3;
@@ -231,11 +251,16 @@ namespace DichVuThueXe.GUI
             this.txtTimKiemNV.Name = "txtTimKiemNV";
             this.txtTimKiemNV.Size = new System.Drawing.Size(349, 22);
             this.txtTimKiemNV.TabIndex = 2;
+            this.txtTimKiemNV.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTimKiemNV_MouseClick);
+            this.txtTimKiemNV.Enter += new System.EventHandler(this.txtTimKiemNV_Enter);
+            this.txtTimKiemNV.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTimKiemNV_KeyUp);
+            this.txtTimKiemNV.Leave += new System.EventHandler(this.txtTimKiemNV_Leave);
             // 
             // txtSDT
             // 
             this.txtSDT.AccessibleName = "";
-            this.txtSDT.Location = new System.Drawing.Point(113, 227);
+            this.txtSDT.Location = new System.Drawing.Point(113, 254);
+            this.txtSDT.MaxLength = 10;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(242, 22);
             this.txtSDT.TabIndex = 2;
@@ -244,7 +269,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label11.AccessibleName = "";
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 230);
+            this.label11.Location = new System.Drawing.Point(6, 257);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 16);
             this.label11.TabIndex = 1;
@@ -253,7 +278,8 @@ namespace DichVuThueXe.GUI
             // txtDiaChi
             // 
             this.txtDiaChi.AccessibleName = "";
-            this.txtDiaChi.Location = new System.Drawing.Point(113, 199);
+            this.txtDiaChi.Location = new System.Drawing.Point(113, 226);
+            this.txtDiaChi.MaxLength = 50;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(242, 22);
             this.txtDiaChi.TabIndex = 2;
@@ -262,7 +288,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label10.AccessibleName = "";
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 202);
+            this.label10.Location = new System.Drawing.Point(6, 229);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 16);
             this.label10.TabIndex = 1;
@@ -272,7 +298,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label9.AccessibleName = "";
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 174);
+            this.label9.Location = new System.Drawing.Point(6, 201);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 16);
             this.label9.TabIndex = 1;
@@ -281,7 +307,8 @@ namespace DichVuThueXe.GUI
             // txtGioiTinh
             // 
             this.txtGioiTinh.AccessibleName = "";
-            this.txtGioiTinh.Location = new System.Drawing.Point(113, 143);
+            this.txtGioiTinh.Location = new System.Drawing.Point(113, 170);
+            this.txtGioiTinh.MaxLength = 10;
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(242, 22);
             this.txtGioiTinh.TabIndex = 2;
@@ -290,7 +317,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label7.AccessibleName = "";
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 146);
+            this.label7.Location = new System.Drawing.Point(6, 173);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 16);
             this.label7.TabIndex = 1;
@@ -299,7 +326,8 @@ namespace DichVuThueXe.GUI
             // txtCMND
             // 
             this.txtCMND.AccessibleName = "";
-            this.txtCMND.Location = new System.Drawing.Point(113, 115);
+            this.txtCMND.Location = new System.Drawing.Point(113, 142);
+            this.txtCMND.MaxLength = 12;
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(242, 22);
             this.txtCMND.TabIndex = 2;
@@ -308,7 +336,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label5.AccessibleName = "";
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 118);
+            this.label5.Location = new System.Drawing.Point(6, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 16);
             this.label5.TabIndex = 1;
@@ -317,7 +345,8 @@ namespace DichVuThueXe.GUI
             // txtTenNV
             // 
             this.txtTenNV.AccessibleName = "";
-            this.txtTenNV.Location = new System.Drawing.Point(113, 87);
+            this.txtTenNV.Location = new System.Drawing.Point(113, 114);
+            this.txtTenNV.MaxLength = 50;
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(242, 22);
             this.txtTenNV.TabIndex = 2;
@@ -326,7 +355,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label2.AccessibleName = "";
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 90);
+            this.label2.Location = new System.Drawing.Point(6, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 16);
             this.label2.TabIndex = 1;
@@ -336,7 +365,7 @@ namespace DichVuThueXe.GUI
             // 
             this.txtMaNV.AccessibleName = "";
             this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(113, 59);
+            this.txtMaNV.Location = new System.Drawing.Point(113, 86);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(242, 22);
             this.txtMaNV.TabIndex = 2;
@@ -345,7 +374,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label8.AccessibleName = "";
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 62);
+            this.label8.Location = new System.Drawing.Point(6, 89);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 16);
             this.label8.TabIndex = 1;
@@ -360,7 +389,7 @@ namespace DichVuThueXe.GUI
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1360, 450);
+            this.tabPage1.Size = new System.Drawing.Size(1360, 474);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quản Trị Xe";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -372,10 +401,10 @@ namespace DichVuThueXe.GUI
             this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnRefresh);
-            this.groupBox3.Location = new System.Drawing.Point(6, 262);
+            this.groupBox3.Location = new System.Drawing.Point(6, 293);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(370, 145);
-            this.groupBox3.TabIndex = 3;
+            this.groupBox3.Size = new System.Drawing.Size(370, 133);
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức năng";
             // 
@@ -426,13 +455,13 @@ namespace DichVuThueXe.GUI
             this.tbXe.Name = "tbXe";
             this.tbXe.RowHeadersWidth = 51;
             this.tbXe.RowTemplate.Height = 24;
-            this.tbXe.Size = new System.Drawing.Size(972, 430);
-            this.tbXe.TabIndex = 2;
+            this.tbXe.Size = new System.Drawing.Size(972, 449);
+            this.tbXe.TabIndex = 0;
             this.tbXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbXe_CellClick);
             // 
             // btnXoaNhieu
             // 
-            this.btnXoaNhieu.Location = new System.Drawing.Point(251, 413);
+            this.btnXoaNhieu.Location = new System.Drawing.Point(251, 432);
             this.btnXoaNhieu.Name = "btnXoaNhieu";
             this.btnXoaNhieu.Size = new System.Drawing.Size(125, 30);
             this.btnXoaNhieu.TabIndex = 0;
@@ -442,6 +471,7 @@ namespace DichVuThueXe.GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtTimKiem);
             this.groupBox1.Controls.Add(this.txtMaLoai);
@@ -454,16 +484,27 @@ namespace DichVuThueXe.GUI
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 250);
+            this.groupBox1.Size = new System.Drawing.Size(370, 281);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhập liệu";
+            // 
+            // label13
+            // 
+            this.label13.AccessibleName = "";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 56);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(300, 13);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "(i): Keyboard layout ở định dạng ENG để có hiệu xuất cao nhất";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rbtnChuaDiChuyen);
             this.groupBox2.Controls.Add(this.rbtnDiChuyen);
-            this.groupBox2.Location = new System.Drawing.Point(9, 171);
+            this.groupBox2.Location = new System.Drawing.Point(9, 198);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(346, 57);
             this.groupBox2.TabIndex = 3;
@@ -475,10 +516,10 @@ namespace DichVuThueXe.GUI
             this.rbtnChuaDiChuyen.AutoSize = true;
             this.rbtnChuaDiChuyen.Location = new System.Drawing.Point(192, 21);
             this.rbtnChuaDiChuyen.Name = "rbtnChuaDiChuyen";
-            this.rbtnChuaDiChuyen.Size = new System.Drawing.Size(119, 20);
+            this.rbtnChuaDiChuyen.Size = new System.Drawing.Size(144, 20);
             this.rbtnChuaDiChuyen.TabIndex = 1;
             this.rbtnChuaDiChuyen.TabStop = true;
-            this.rbtnChuaDiChuyen.Text = "Chưa di chuyển";
+            this.rbtnChuaDiChuyen.Text = "Không có hợp đồng";
             this.rbtnChuaDiChuyen.UseVisualStyleBackColor = true;
             // 
             // rbtnDiChuyen
@@ -486,10 +527,10 @@ namespace DichVuThueXe.GUI
             this.rbtnDiChuyen.AutoSize = true;
             this.rbtnDiChuyen.Location = new System.Drawing.Point(54, 21);
             this.rbtnDiChuyen.Name = "rbtnDiChuyen";
-            this.rbtnDiChuyen.Size = new System.Drawing.Size(87, 20);
+            this.rbtnDiChuyen.Size = new System.Drawing.Size(105, 20);
             this.rbtnDiChuyen.TabIndex = 0;
             this.rbtnDiChuyen.TabStop = true;
-            this.rbtnDiChuyen.Text = "Di chuyển";
+            this.rbtnDiChuyen.Text = "Có hợp đồng";
             this.rbtnDiChuyen.UseVisualStyleBackColor = true;
             // 
             // txtTimKiem
@@ -504,7 +545,7 @@ namespace DichVuThueXe.GUI
             // 
             // txtMaLoai
             // 
-            this.txtMaLoai.Location = new System.Drawing.Point(63, 143);
+            this.txtMaLoai.Location = new System.Drawing.Point(63, 170);
             this.txtMaLoai.Name = "txtMaLoai";
             this.txtMaLoai.Size = new System.Drawing.Size(292, 22);
             this.txtMaLoai.TabIndex = 2;
@@ -513,7 +554,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label6.AccessibleName = "";
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 143);
+            this.label6.Location = new System.Drawing.Point(6, 170);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 16);
             this.label6.TabIndex = 1;
@@ -521,7 +562,8 @@ namespace DichVuThueXe.GUI
             // 
             // txtBienSo
             // 
-            this.txtBienSo.Location = new System.Drawing.Point(63, 115);
+            this.txtBienSo.Location = new System.Drawing.Point(63, 142);
+            this.txtBienSo.MaxLength = 25;
             this.txtBienSo.Name = "txtBienSo";
             this.txtBienSo.Size = new System.Drawing.Size(292, 22);
             this.txtBienSo.TabIndex = 2;
@@ -530,14 +572,15 @@ namespace DichVuThueXe.GUI
             // 
             this.txtMaXe.AccessibleName = "";
             this.txtMaXe.Enabled = false;
-            this.txtMaXe.Location = new System.Drawing.Point(63, 59);
+            this.txtMaXe.Location = new System.Drawing.Point(63, 86);
             this.txtMaXe.Name = "txtMaXe";
             this.txtMaXe.Size = new System.Drawing.Size(292, 22);
             this.txtMaXe.TabIndex = 2;
             // 
             // txtTenXe
             // 
-            this.txtTenXe.Location = new System.Drawing.Point(63, 87);
+            this.txtTenXe.Location = new System.Drawing.Point(63, 114);
+            this.txtTenXe.MaxLength = 50;
             this.txtTenXe.Name = "txtTenXe";
             this.txtTenXe.Size = new System.Drawing.Size(292, 22);
             this.txtTenXe.TabIndex = 2;
@@ -546,7 +589,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label4.AccessibleName = "";
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 115);
+            this.label4.Location = new System.Drawing.Point(6, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 1;
@@ -556,7 +599,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label3.AccessibleName = "";
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 87);
+            this.label3.Location = new System.Drawing.Point(6, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 16);
             this.label3.TabIndex = 1;
@@ -566,7 +609,7 @@ namespace DichVuThueXe.GUI
             // 
             this.label1.AccessibleName = "";
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 62);
+            this.label1.Location = new System.Drawing.Point(6, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 1;
@@ -579,8 +622,8 @@ namespace DichVuThueXe.GUI
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1368, 479);
-            this.tabControl1.TabIndex = 3;
+            this.tabControl1.Size = new System.Drawing.Size(1368, 503);
+            this.tabControl1.TabIndex = 0;
             // 
             // nHANVIENBindingSource
             // 
@@ -591,11 +634,17 @@ namespace DichVuThueXe.GUI
             // 
             this.nHANVIENTableAdapter.ClearBeforeFill = true;
             // 
+            // toolTipTimKiemNV
+            // 
+            this.toolTipTimKiemNV.IsBalloon = true;
+            this.toolTipTimKiemNV.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTipTimKiemNV.ToolTipTitle = "Gợi ý";
+            // 
             // MENU_ChucNang_Quantrivien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 500);
+            this.ClientSize = new System.Drawing.Size(1392, 521);
             this.Controls.Add(this.tabControl1);
             this.Name = "MENU_ChucNang_Quantrivien";
             this.Text = "Chức Năng Quản Trị Viên";
@@ -673,5 +722,8 @@ namespace DichVuThueXe.GUI
         private System.Windows.Forms.Button btnDoiMK;
         private System.Windows.Forms.BindingSource nHANVIENBindingSource;
         private HTTX_DataSetTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
+        private System.Windows.Forms.ToolTip toolTipTimKiemNV;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

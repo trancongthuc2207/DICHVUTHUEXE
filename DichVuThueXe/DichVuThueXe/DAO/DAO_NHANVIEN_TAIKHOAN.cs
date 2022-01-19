@@ -26,6 +26,25 @@ namespace DichVuThueXe.DAO
             List<NHANVIEN_TAIKHOAN> ds = conn.NHANVIEN_TAIKHOANs.Select(s=>s).ToList();
             return ds;
         }
+        public List<NHANVIEN_TAIKHOAN> getListNV_TK(int maNV)
+        {
+            var get = from s in conn.NHANVIEN_TAIKHOANs where s.MaNV == maNV select s;
+            return get.ToList();
+        }
+        public List<NHANVIEN_TAIKHOAN> getListNV_TK(string taiKhoan)
+        {
+            var get = from s in conn.NHANVIEN_TAIKHOANs where s.Taikhoan.Contains(taiKhoan) select s;
+            return get.ToList();
+        }
+        public void doiMKNV(int maNV, string matKhau)
+        {
+            conn.SP_DoiMatKhauNV(maNV, matKhau);
+        }
+        public void doiChucVu(int maNV, int viTri)
+        {
+            conn.SP_thayDoiChucVu(maNV, viTri);
+        }
+
 
         public int? getCheckTAIKHOAN_DN(String tk, String mk)
         {
@@ -52,6 +71,11 @@ namespace DichVuThueXe.DAO
             int? checkadd = 0;
             conn.SV_addNhanVien_TaiKhoan(manv, taikhoan, matkhau, ref checkadd);
             return checkadd;
+        }
+
+        public void xoaNVTaiKhoan(int maNV)
+        {
+            conn.SP_XoaNVTaiKhoan(maNV);
         }
 
     }

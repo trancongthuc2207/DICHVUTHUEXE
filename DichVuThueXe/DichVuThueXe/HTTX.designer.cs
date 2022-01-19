@@ -193,6 +193,20 @@ namespace DichVuThueXe
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_DoiMatKhauNV")]
+		public int SP_DoiMatKhauNV([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maNV, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(25)")] string matKhau)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV, matKhau);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SuaNV")]
+		public int SP_SuaNV([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maNV, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenNV, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(12)")] string cmnd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(10)")] string gioiTinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> ngaySinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string diaChi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string sdt)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV, tenNV, cmnd, gioiTinh, ngaySinh, diaChi, sdt);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SuaXe")]
 		public int SP_SuaXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tenxe", DbType="NVarChar(50)")] string tenxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bienso", DbType="VarChar(25)")] string bienso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Trangthai", DbType="Bit")] System.Nullable<bool> trangthai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaL", DbType="Int")] System.Nullable<int> maL)
 		{
@@ -200,10 +214,31 @@ namespace DichVuThueXe
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_thayDoiChucVu")]
+		public int SP_thayDoiChucVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maNV, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> viTri)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV, viTri);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_ThemXe")]
 		public int SP_ThemXe([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Maxe", DbType="Int")] System.Nullable<int> maxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tenxe", DbType="NVarChar(50)")] string tenxe, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bienso", DbType="VarChar(25)")] string bienso, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Trangthai", DbType="Bit")] System.Nullable<bool> trangthai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaL", DbType="Int")] System.Nullable<int> maL)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maxe, tenxe, bienso, trangthai, maL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XoaNV")]
+		public int SP_XoaNV([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maNV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XoaNVTaiKhoan")]
+		public int SP_XoaNVTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maNV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNV);
 			return ((int)(result.ReturnValue));
 		}
 		

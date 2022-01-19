@@ -27,6 +27,12 @@ namespace DichVuThueXe.DAO
             return maCur;
         }
 
+        public KHACHHANG getKH1(int maKH)
+        {
+            var get = (from s in conn.KHACHHANGs where s.MaKH == maKH select s).First();
+            return get;
+        }
+
         public int? addKhachHang(int? maKH, string ten, string cmnd, string gioitinh, DateTime ngaysinh,string diachi, string sdt) 
         {
             int? checkadd = 0;

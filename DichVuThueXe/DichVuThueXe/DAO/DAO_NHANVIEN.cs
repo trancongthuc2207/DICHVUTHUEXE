@@ -58,5 +58,22 @@ namespace DichVuThueXe.DAO
             conn.SV_addNhanVien(maNV, ten, cmnd, gioitinh, ngaysinh, diachi, sdt, ref checkadd);
             return checkadd;
         }
+
+        public void suaNV(int maNV, string tenNV, string cmnd, string gioiTinh, DateTime ngaySinh, string diaChi, string sdt)
+        {
+            conn.SP_SuaNV(maNV, tenNV, cmnd, gioiTinh, ngaySinh, diaChi, sdt);
+            //var suaNV = (from s in conn.NHANVIENs where s.MaNV == maNV select s).First();
+            //suaNV.TenNV = tenNV;
+            //suaNV.CMND = cmnd;
+            //suaNV.Gioitinh = gioiTinh;
+            //suaNV.Ngaysinh = ngaySinh;
+            //suaNV.Diachi = diaChi;
+            //suaNV.SDT = sdt;
+            //conn.SubmitChanges();
+        }
+        public void xoaNV(int maNV)
+        {
+            conn.SP_XoaNV(maNV);
+        }
     }
 }
